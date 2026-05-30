@@ -16,6 +16,7 @@
         "title_line1": "Stoppe la chute,",
         "title_line2": "repousse",
         "subtitle": "Le savon noir capillaire thérapeutique — 14 ingrédients naturels, des résultats visibles dès la 2ᵉ semaine.",
+        "image": "shopify://shop_images/hero-bg.jpg",
         "cta_label": "Découvrir le soin",
         "cta_url": "/collections/nos-produits"
       }
@@ -23,11 +24,33 @@
     "benefits": {
       "type": "benefits-band",
       "blocks": {
-        "b1": { "type": "stat", "settings": { "number": "−100%", "label": "Chute stoppée dès 1 mois" } },
-        "b2": { "type": "stat", "settings": { "number": "1 mois", "label": "Première repousse visible" } },
-        "b3": { "type": "stat", "settings": { "number": "2 sem.", "label": "Cuir chevelu assaini" } }
+        "b1": {
+          "type": "stat",
+          "settings": {
+            "number": "−100%",
+            "label": "Chute stoppée dès 1 mois"
+          }
+        },
+        "b2": {
+          "type": "stat",
+          "settings": {
+            "number": "1 mois",
+            "label": "Première repousse visible"
+          }
+        },
+        "b3": {
+          "type": "stat",
+          "settings": {
+            "number": "2 sem.",
+            "label": "Cuir chevelu assaini"
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
       "settings": {}
     },
     "spotlight": {
@@ -49,49 +72,231 @@
     "ingredients": {
       "type": "ingredients",
       "blocks": {
-        "i1": { "type": "item", "settings": { "name": "Usma", "role": "Densifie & fortifie" } },
-        "i2": { "type": "item", "settings": { "name": "Ortie", "role": "Anti-chute" } },
-        "i3": { "type": "item", "settings": { "name": "Gingembre", "role": "Stimule la circulation" } },
-        "i4": { "type": "item", "settings": { "name": "Nigelle noire", "role": "Apaise le cuir chevelu" } },
-        "i5": { "type": "item", "settings": { "name": "Huile de coco", "role": "Nourrit en profondeur" } },
-        "i6": { "type": "item", "settings": { "name": "Ricin", "role": "Active la repousse" } },
-        "i7": { "type": "item", "settings": { "name": "Romarin", "role": "Stimule la pousse" } },
-        "i8": { "type": "item", "settings": { "name": "Ortie blanche", "role": "Régule le sébum" } },
-        "i9": { "type": "item", "settings": { "name": "Argan", "role": "Brillance & souplesse" } },
-        "i10": { "type": "item", "settings": { "name": "Aloe vera", "role": "Hydrate & apaise" } },
-        "i11": { "type": "item", "settings": { "name": "Henné neutre", "role": "Gaine la fibre" } },
-        "i12": { "type": "item", "settings": { "name": "Argile", "role": "Purifie" } },
-        "i13": { "type": "item", "settings": { "name": "Miel brut", "role": "Nourrit" } },
-        "i14": { "type": "item", "settings": { "name": "Charbon végétal", "role": "Détoxifie" } }
+        "i1": {
+          "type": "item",
+          "settings": {
+            "name": "Usma",
+            "role": "Densifie & fortifie"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "name": "Ortie",
+            "role": "Anti-chute"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "name": "Gingembre",
+            "role": "Stimule la circulation"
+          }
+        },
+        "i4": {
+          "type": "item",
+          "settings": {
+            "name": "Nigelle noire",
+            "role": "Apaise le cuir chevelu"
+          }
+        },
+        "i5": {
+          "type": "item",
+          "settings": {
+            "name": "Huile de coco",
+            "role": "Nourrit en profondeur"
+          }
+        },
+        "i6": {
+          "type": "item",
+          "settings": {
+            "name": "Ricin",
+            "role": "Active la repousse"
+          }
+        },
+        "i7": {
+          "type": "item",
+          "settings": {
+            "name": "Romarin",
+            "role": "Stimule la pousse"
+          }
+        },
+        "i8": {
+          "type": "item",
+          "settings": {
+            "name": "Ortie blanche",
+            "role": "Régule le sébum"
+          }
+        },
+        "i9": {
+          "type": "item",
+          "settings": {
+            "name": "Argan",
+            "role": "Brillance & souplesse"
+          }
+        },
+        "i10": {
+          "type": "item",
+          "settings": {
+            "name": "Aloe vera",
+            "role": "Hydrate & apaise"
+          }
+        },
+        "i11": {
+          "type": "item",
+          "settings": {
+            "name": "Henné neutre",
+            "role": "Gaine la fibre"
+          }
+        },
+        "i12": {
+          "type": "item",
+          "settings": {
+            "name": "Argile",
+            "role": "Purifie"
+          }
+        },
+        "i13": {
+          "type": "item",
+          "settings": {
+            "name": "Miel brut",
+            "role": "Nourrit"
+          }
+        },
+        "i14": {
+          "type": "item",
+          "settings": {
+            "name": "Charbon végétal",
+            "role": "Détoxifie"
+          }
+        }
       },
-      "block_order": ["i1","i2","i3","i4","i5","i6","i7","i8","i9","i10","i11","i12","i13","i14"],
-      "settings": { "eyebrow": "14 ingrédients · 0 compromis", "title": "Tout vient de la ", "title_em": "nature" }
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6",
+        "i7",
+        "i8",
+        "i9",
+        "i10",
+        "i11",
+        "i12",
+        "i13",
+        "i14"
+      ],
+      "settings": {
+        "eyebrow": "14 ingrédients · 0 compromis",
+        "title": "Tout vient de la",
+        "title_em": "nature"
+      }
     },
     "ritual": {
       "type": "ritual",
       "blocks": {
-        "r1": { "type": "step", "settings": { "title": "Faire mousser", "desc": "Frottez la savonnette entre vos mains humides jusqu'à obtenir une mousse onctueuse." } },
-        "r2": { "type": "step", "settings": { "title": "Masser le cuir chevelu", "desc": "Appliquez et massez 2 minutes pour activer la microcirculation." } },
-        "r3": { "type": "step", "settings": { "title": "Laisser poser", "desc": "Laissez agir 3 à 5 minutes, puis rincez à l'eau tiède." } },
-        "r4": { "type": "step", "settings": { "title": "Répéter 3× / semaine", "desc": "Pour une cure complète de 3 mois, résultats dès la 2ᵉ semaine." } }
+        "r1": {
+          "type": "step",
+          "settings": {
+            "title": "Faire mousser",
+            "desc": "Frottez la savonnette entre vos mains humides jusqu'à obtenir une mousse onctueuse."
+          }
+        },
+        "r2": {
+          "type": "step",
+          "settings": {
+            "title": "Masser le cuir chevelu",
+            "desc": "Appliquez et massez 2 minutes pour activer la microcirculation."
+          }
+        },
+        "r3": {
+          "type": "step",
+          "settings": {
+            "title": "Laisser poser",
+            "desc": "Laissez agir 3 à 5 minutes, puis rincez à l'eau tiède."
+          }
+        },
+        "r4": {
+          "type": "step",
+          "settings": {
+            "title": "Répéter 3× / semaine",
+            "desc": "Pour une cure complète de 3 mois, résultats dès la 2ᵉ semaine."
+          }
+        }
       },
-      "block_order": ["r1","r2","r3","r4"],
-      "settings": { "eyebrow": "Le rituel", "title": "4 gestes, 3 fois par semaine" }
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
+      "settings": {
+        "eyebrow": "Le rituel",
+        "title": "4 gestes, 3 fois par semaine"
+      }
     },
     "social": {
       "type": "social-proof",
       "blocks": {
-        "t1": { "type": "review", "settings": { "rating": 5, "text": "En 3 semaines mes pellicules ont disparu et je vois déjà des petits cheveux repousser sur les tempes. Bluffée.", "name": "Inès K.", "location": "Lyon" } },
-        "t2": { "type": "review", "settings": { "rating": 5, "text": "Ma chute s'est nettement calmée au bout d'un mois. L'odeur est naturelle, rien à voir avec les shampoings classiques.", "name": "Karim B.", "location": "Paris" } },
-        "t3": { "type": "review", "settings": { "rating": 5, "text": "Cheveux plus épais et un cuir chevelu enfin apaisé. Je suis sur le pack 3 mois, je recommande.", "name": "Sofia R.", "location": "Marseille" } }
+        "t1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "En 3 semaines mes pellicules ont disparu et je vois déjà des petits cheveux repousser sur les tempes. Bluffée.",
+            "name": "Inès K.",
+            "location": "Lyon"
+          }
+        },
+        "t2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "Ma chute s'est nettement calmée au bout d'un mois. L'odeur est naturelle, rien à voir avec les shampoings classiques.",
+            "name": "Karim B.",
+            "location": "Paris"
+          }
+        },
+        "t3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "Cheveux plus épais et un cuir chevelu enfin apaisé. Je suis sur le pack 3 mois, je recommande.",
+            "name": "Sofia R.",
+            "location": "Marseille"
+          }
+        }
       },
-      "block_order": ["t1","t2","t3"],
-      "settings": { "ig_views": "38 000", "ig_label": "vues en 7 jours", "title": "Avis vérifiés" }
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
+      "settings": {
+        "ig_views": "38 000",
+        "ig_label": "vues en 7 jours",
+        "title": "Avis vérifiés"
+      }
     },
     "cta": {
       "type": "closing-cta",
-      "settings": { "title": "Commencez votre ", "title_em": "cure", "code": "LIVRAISON50", "cta_label": "Voir les formats", "cta_url": "/collections/nos-produits" }
+      "settings": {
+        "title": "Commencez votre",
+        "title_em": "cure",
+        "code": "LIVRAISON50",
+        "cta_label": "Voir les formats",
+        "cta_url": "/collections/nos-produits"
+      }
     }
   },
-  "order": ["hero","benefits","spotlight","before_after","ingredients","ritual","social","cta"]
+  "order": [
+    "hero",
+    "benefits",
+    "spotlight",
+    "before_after",
+    "ingredients",
+    "ritual",
+    "social",
+    "cta"
+  ]
 }
