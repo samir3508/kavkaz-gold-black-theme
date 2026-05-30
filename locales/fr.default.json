@@ -1,0 +1,10 @@
+{
+  "general": { "404": { "title": "Page introuvable" } },
+  "cart": {
+    "general": { "title": "Panier", "empty": "Votre panier est vide.", "checkout": "Passer la commande", "continue_shopping": "Continuer mes achats", "subtotal": "Sous-total", "shipping": "Livraison", "total": "Total" },
+    "label": { "item": "Article", "price": "Prix", "quantity": "Quantité", "total": "Total" }
+  },
+  "products": {
+    "product": { "add_to_cart": "Ajouter au panier", "sold_out": "Rupture de stock", "unavailable": "Indisponible" }
+  }
+}

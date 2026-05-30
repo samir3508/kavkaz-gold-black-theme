@@ -1,0 +1,58 @@
+<section class="social-proof section-pad" style="background:var(--ink)">
+  <div class="container">
+    <div class="ig-card">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#C9A84C" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#C9A84C" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1.1" fill="#C9A84C"/></svg>
+      <div>
+        <div class="ig-card__stat"><span class="gold-text">{{ section.settings.ig_views | default: '38 000' }}</span> <span class="ig-card__sublabel">{{ section.settings.ig_label | default: 'vues en 7 jours' }}</span></div>
+        <div class="ig-card__sub">La communauté Kavkaz grandit sur Instagram</div>
+      </div>
+    </div>
+
+    <p class="eyebrow" style="margin-top:2rem">{{ section.settings.title | default: 'Avis vérifiés' }}</p>
+
+    <div class="reviews">
+      {%- for block in section.blocks -%}
+        <div class="review-card" {{ block.shopify_attributes }}>
+          <div class="review-stars">
+            {%- assign r = block.settings.rating | default: 5 -%}
+            {%- for i in (1..5) -%}
+              <svg width="13" height="13" viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.26 5.78.72-4.27 3.95 1.12 5.72L10 14.4l-5.1 2.75 1.12-5.72L1.75 7.48l5.78-.72z" fill="{% if i <= r %}#C9A84C{% else %}rgba(201,168,76,0.22){% endif %}"/></svg>
+            {%- endfor -%}
+          </div>
+          <p class="review-text">"{{ block.settings.text }}"</p>
+          <div class="review-author"><span style="color:#C9A84C">{{ block.settings.name }}</span> <span style="color:rgba(249,245,240,0.4)">· {{ block.settings.location }}</span></div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Preuve sociale",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "ig_views", "label": "Vues Instagram", "default": "38 000" },
+    { "type": "text", "id": "ig_label", "label": "Label vues", "default": "vues en 7 jours" },
+    { "type": "text", "id": "title", "label": "Titre avis", "default": "Avis vérifiés" }
+  ],
+  "blocks": [{
+    "type": "review",
+    "name": "Avis",
+    "settings": [
+      { "type": "range", "id": "rating", "label": "Note", "min": 1, "max": 5, "step": 1, "default": 5 },
+      { "type": "textarea", "id": "text", "label": "Texte" },
+      { "type": "text", "id": "name", "label": "Nom" },
+      { "type": "text", "id": "location", "label": "Ville" }
+    ]
+  }],
+  "presets": [{
+    "name": "Preuve sociale",
+    "blocks": [
+      { "type": "review", "settings": { "rating": 5, "text": "En 3 semaines mes pellicules ont disparu et je vois déjà des petits cheveux repousser sur les tempes. Bluffée.", "name": "Inès K.", "location": "Lyon" } },
+      { "type": "review", "settings": { "rating": 5, "text": "Ma chute s'est nettement calmée au bout d'un mois. L'odeur est naturelle, rien à voir avec les shampoings classiques.", "name": "Karim B.", "location": "Paris" } },
+      { "type": "review", "settings": { "rating": 5, "text": "Cheveux plus épais et un cuir chevelu enfin apaisé. Je suis sur le pack 3 mois, je recommande.", "name": "Sofia R.", "location": "Marseille" } }
+    ]
+  }]
+}
+{% endschema %}

@@ -1,0 +1,26 @@
+<div class="collection-page section-pad" style="background:var(--cream);color:var(--ink)">
+  <div class="container">
+    <h1>{{ collection.title }}</h1>
+    <div class="collection-grid">
+      {%- for product in collection.products -%}
+        <a href="{{ product.url }}" class="coll-card">
+          {%- if product.featured_image -%}
+            <img src="{{ product.featured_image | image_url: width: 600 }}" alt="{{ product.featured_image.alt | escape }}" width="600" height="600" loading="lazy" class="coll-card__img">
+          {%- else -%}
+            <div class="img-placeholder" style="height:200px"><span>{{ product.title }}</span></div>
+          {%- endif -%}
+          <div class="coll-card__info">
+            <div class="coll-card__name">{{ product.title }}</div>
+            <div class="coll-card__price gold-text">{{ product.price | money }}</div>
+          </div>
+        </a>
+      {%- else -%}
+        <p style="color:var(--gray)">Aucun produit dans cette collection.</p>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{ "name": "Page Collection", "tag": "section", "settings": [], "presets": [{ "name": "Page Collection" }] }
+{% endschema %}

@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-wordmark">KAVKAZ</div>
+    <div class="footer-wordmark__sub">GOLD · BLACK</div>
+    <nav class="footer-nav">
+      {%- for link in linklists[section.settings.menu].links -%}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {%- else -%}
+        <a href="/pages/notre-histoire-1">Notre histoire</a>
+        <a href="/pages/faq-questions-frequentes">FAQ</a>
+        <a href="/policies/shipping-policy">Livraison</a>
+        <a href="/pages/mentions-legales-cgv">Mentions légales</a>
+      {%- endfor -%}
+    </nav>
+    <p class="footer-copy">© {{ 'now' | date: '%Y' }} Kavkaz Gold Black · Fabriqué à partir d'ingrédients du Caucase</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "footer" }
+  ]
+}
+{% endschema %}

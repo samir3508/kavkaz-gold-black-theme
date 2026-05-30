@@ -1,0 +1,35 @@
+<section class="benefits-band">
+  <div class="benefits-band__grid">
+    {%- for block in section.blocks -%}
+      <div class="benefits-band__item {% unless forloop.first %}benefits-band__item--border{% endunless %}" {{ block.shopify_attributes }}>
+        <div class="benefits-band__number gold-text">{{ block.settings.number }}</div>
+        <div class="benefits-band__label">{{ block.settings.label }}</div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bande bénéfices",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Chiffre", "default": "−100%" },
+        { "type": "text", "id": "label", "label": "Description", "default": "Chute stoppée dès 1 mois" }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Bande bénéfices",
+    "blocks": [
+      { "type": "stat", "settings": { "number": "−100%", "label": "Chute stoppée dès 1 mois" } },
+      { "type": "stat", "settings": { "number": "1 mois", "label": "Première repousse visible" } },
+      { "type": "stat", "settings": { "number": "2 sem.", "label": "Cuir chevelu assaini" } }
+    ]
+  }]
+}
+{% endschema %}

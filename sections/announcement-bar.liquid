@@ -1,0 +1,13 @@
+<div class="announcement-bar">
+  ✦&nbsp;&nbsp;{{ section.settings.text | default: 'LIVRAISON OFFERTE DÈS 50€' }}&nbsp;&nbsp;·&nbsp;&nbsp;CODE&nbsp;<span class="announcement-bar__code">{{ section.settings.code | default: 'LIVRAISON50' }}</span>&nbsp;&nbsp;✦
+</div>
+
+{% schema %}
+{
+  "name": "Bandeau promo",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Texte", "default": "LIVRAISON OFFERTE DÈS 50€" },
+    { "type": "text", "id": "code", "label": "Code promo", "default": "LIVRAISON50" }
+  ]
+}
+{% endschema %}

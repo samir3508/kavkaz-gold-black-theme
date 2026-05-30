@@ -1,0 +1,28 @@
+<section class="closing-cta section-pad">
+  <div class="container text-center">
+    <h2 class="closing-cta__title">
+      {{ section.settings.title | default: 'Commencez votre ' }}<em class="gold-text">{{ section.settings.title_em | default: 'cure' }}</em>
+    </h2>
+    <p class="closing-cta__sub">
+      Livraison offerte dès 50€ avec le code <span style="color:#C9A84C">{{ section.settings.code | default: 'LIVRAISON50' }}</span>.
+    </p>
+    <a href="{{ section.settings.cta_url | default: '/collections/all' }}" class="btn btn-gold btn-lg">
+      {{ section.settings.cta_label | default: 'Voir les formats' }}
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA final",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titre", "default": "Commencez votre " },
+    { "type": "text", "id": "title_em", "label": "Mot or italique", "default": "cure" },
+    { "type": "text", "id": "code", "label": "Code promo", "default": "LIVRAISON50" },
+    { "type": "text", "id": "cta_label", "label": "Bouton", "default": "Voir les formats" },
+    { "type": "url", "id": "cta_url", "label": "Lien bouton" }
+  ],
+  "presets": [{ "name": "CTA final" }]
+}
+{% endschema %}

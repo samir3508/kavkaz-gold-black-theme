@@ -1,0 +1,54 @@
+<section class="product-spotlight section-pad">
+  <div class="container">
+    <p class="eyebrow">{{ section.settings.eyebrow | default: 'Le produit' }}</p>
+    <h2 class="section-title">{{ section.settings.title | default: 'La savonnette Kavkaz' }}<br><span class="section-title__sub">{{ section.settings.subtitle | default: 'pain rond, 75g' }}</span></h2>
+
+    <div class="product-spotlight__img-wrap">
+      {%- if section.settings.image != blank -%}
+        <img src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.title }}" width="800" height="500" loading="lazy" class="product-spotlight__img">
+      {%- else -%}
+        <img src="{{ 'product-solo.jpg' | asset_url }}" alt="Kavkaz Gold Black" width="800" height="500" loading="lazy" class="product-spotlight__img">
+      {%- endif -%}
+    </div>
+
+    {%- assign featured = all_products[section.settings.product] -%}
+    {%- if featured != blank -%}
+      <a href="{{ featured.url }}" class="product-spotlight__card">
+        <div>
+          <div class="product-spotlight__card-name">{{ featured.title }}</div>
+          <div class="product-spotlight__card-sub">1 mois de soin</div>
+        </div>
+        <div class="product-spotlight__card-right">
+          <div class="product-spotlight__card-price gold-text">{{ featured.price | money }}</div>
+          <div class="product-spotlight__card-arrow">VOIR →</div>
+        </div>
+      </a>
+    {%- else -%}
+      <a href="/collections/all" class="product-spotlight__card">
+        <div>
+          <div class="product-spotlight__card-name">Savonnette 75g</div>
+          <div class="product-spotlight__card-sub">1 mois de soin</div>
+        </div>
+        <div class="product-spotlight__card-right">
+          <div class="product-spotlight__card-price gold-text">14,80 €</div>
+          <div class="product-spotlight__card-arrow">VOIR →</div>
+        </div>
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Produit vedette",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Label", "default": "Le produit" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "La savonnette Kavkaz" },
+    { "type": "text", "id": "subtitle", "label": "Sous-titre", "default": "pain rond, 75g" },
+    { "type": "image_picker", "id": "image", "label": "Photo macro" },
+    { "type": "product", "id": "product", "label": "Produit" }
+  ],
+  "presets": [{ "name": "Produit vedette" }]
+}
+{% endschema %}

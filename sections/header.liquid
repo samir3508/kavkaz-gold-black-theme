@@ -1,0 +1,33 @@
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="/" class="header-back" id="header-back" style="display:none" aria-label="Retour">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <a href="/" class="header-wordmark">
+      <span class="header-wordmark__main">KAVKAZ</span>
+      <span class="header-wordmark__sub">GOLD · BLACK</span>
+    </a>
+
+    <div class="header-right">
+      <a href="/cart" class="header-cart" aria-label="Panier">
+        <svg width="23" height="23" viewBox="0 0 24 24" fill="none">
+          <path d="M3 4h2l2.2 11.2a1.5 1.5 0 001.5 1.2h8.6a1.5 1.5 0 001.5-1.2L20.5 8H6.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9.5" cy="20" r="1.4" fill="currentColor"/>
+          <circle cx="17.5" cy="20" r="1.4" fill="currentColor"/>
+        </svg>
+        {%- if cart.item_count > 0 -%}
+          <span class="cart-badge">{{ cart.item_count }}</span>
+        {%- endif -%}
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "En-tête"
+}
+{% endschema %}

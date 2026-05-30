@@ -1,0 +1,55 @@
+<section class="ingredients section-pad" style="background:var(--cream);color:var(--ink)">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--gray)">{{ section.settings.eyebrow | default: '14 ingrédients · 0 compromis' }}</p>
+    <h2 class="section-title" style="color:var(--ink)">
+      {{ section.settings.title | default: 'Tout vient de la ' }}<em class="gold-text-dark">{{ section.settings.title_em | default: 'nature' }}</em>.
+    </h2>
+    <div class="ingredients__grid">
+      {%- for block in section.blocks -%}
+        <div class="ingredient-row" {{ block.shopify_attributes }}>
+          <span class="ingredient-row__name">{{ block.settings.name }}</span>
+          <span class="ingredient-row__role">{{ block.settings.role }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Ingrédients",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Label", "default": "14 ingrédients · 0 compromis" },
+    { "type": "text", "id": "title", "label": "Titre (avant italique)", "default": "Tout vient de la " },
+    { "type": "text", "id": "title_em", "label": "Mot italique or", "default": "nature" }
+  ],
+  "blocks": [{
+    "type": "item",
+    "name": "Ingrédient",
+    "settings": [
+      { "type": "text", "id": "name", "label": "Nom" },
+      { "type": "text", "id": "role", "label": "Rôle" }
+    ]
+  }],
+  "presets": [{
+    "name": "Ingrédients",
+    "blocks": [
+      { "type": "item", "settings": { "name": "Usma", "role": "Densifie & fortifie" } },
+      { "type": "item", "settings": { "name": "Ortie", "role": "Anti-chute" } },
+      { "type": "item", "settings": { "name": "Gingembre", "role": "Stimule la circulation" } },
+      { "type": "item", "settings": { "name": "Nigelle noire", "role": "Apaise le cuir chevelu" } },
+      { "type": "item", "settings": { "name": "Huile de coco", "role": "Nourrit en profondeur" } },
+      { "type": "item", "settings": { "name": "Ricin", "role": "Active la repousse" } },
+      { "type": "item", "settings": { "name": "Romarin", "role": "Stimule la pousse" } },
+      { "type": "item", "settings": { "name": "Ortie blanche", "role": "Régule le sébum" } },
+      { "type": "item", "settings": { "name": "Argan", "role": "Brillance & souplesse" } },
+      { "type": "item", "settings": { "name": "Aloe vera", "role": "Hydrate & apaise" } },
+      { "type": "item", "settings": { "name": "Henné neutre", "role": "Gaine la fibre" } },
+      { "type": "item", "settings": { "name": "Argile", "role": "Purifie" } },
+      { "type": "item", "settings": { "name": "Miel brut", "role": "Nourrit" } },
+      { "type": "item", "settings": { "name": "Charbon végétal", "role": "Détoxifie" } }
+    ]
+  }]
+}
+{% endschema %}

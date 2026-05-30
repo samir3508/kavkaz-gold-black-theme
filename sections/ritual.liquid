@@ -1,0 +1,45 @@
+<section class="ritual section-pad">
+  <div class="container">
+    <p class="eyebrow">{{ section.settings.eyebrow | default: 'Le rituel' }}</p>
+    <h2 class="section-title">{{ section.settings.title | default: '4 gestes, 3 fois par semaine' }}</h2>
+    <div class="ritual__steps">
+      {%- for block in section.blocks -%}
+        <div class="ritual__step" {{ block.shopify_attributes }}>
+          <div class="ritual__num">{{ forloop.index }}</div>
+          <div class="ritual__content">
+            <div class="ritual__step-title">{{ block.settings.title }}</div>
+            <div class="ritual__step-desc">{{ block.settings.desc }}</div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Le rituel",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Label", "default": "Le rituel" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "4 gestes, 3 fois par semaine" }
+  ],
+  "blocks": [{
+    "type": "step",
+    "name": "Étape",
+    "settings": [
+      { "type": "text", "id": "title", "label": "Titre" },
+      { "type": "textarea", "id": "desc", "label": "Description" }
+    ]
+  }],
+  "presets": [{
+    "name": "Le rituel",
+    "blocks": [
+      { "type": "step", "settings": { "title": "Faire mousser", "desc": "Frottez la savonnette entre vos mains humides jusqu'à obtenir une mousse onctueuse." } },
+      { "type": "step", "settings": { "title": "Masser le cuir chevelu", "desc": "Appliquez et massez 2 minutes pour activer la microcirculation." } },
+      { "type": "step", "settings": { "title": "Laisser poser", "desc": "Laissez agir 3 à 5 minutes, puis rincez à l'eau tiède." } },
+      { "type": "step", "settings": { "title": "Répéter 3× / semaine", "desc": "Pour une cure complète de 3 mois, résultats dès la 2ᵉ semaine." } }
+    ]
+  }]
+}
+{% endschema %}
