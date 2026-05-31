@@ -70,6 +70,7 @@
               data-price="{{ v.price | money }}"
               data-cents="{{ v.price }}"
               data-blurb="{{ blurb }}"
+              data-img="{{ p.featured_image | image_url: width: 900 }}"
               onchange="document.getElementById('pf-blurb').textContent=this.dataset.blurb;document.getElementById('pf-compare').style.display='none';document.querySelectorAll('.vcard').forEach(c=>c.classList.remove('vcard--on'));this.closest('.vcard').classList.add('vcard--on');kgbUpd()">
             <div>
               <span class="vcard__name">{% if is_pack %}Pack 3 savonnettes{% else %}Savonnette 75g{% endif %}</span>
@@ -82,6 +83,20 @@
             </div>
           </label>
         {%- endfor -%}
+      </div>
+
+      <!-- Guide de sélection -->
+      <div class="fmt-guide">
+        <p class="fl" style="margin-bottom:10px">LIS AVANT DE COMMANDER</p>
+        <div class="fmt-guide__block fmt-guide__block--soft">
+          <p class="fmt-guide__q">Pellicules ou démangeaisons légères ?</p>
+          <p class="fmt-guide__a">Le <strong>Pack 1 Mois</strong> suffit. Résultats visibles en 2 à 3 semaines.</p>
+        </div>
+        <div class="fmt-guide__block fmt-guide__block--hard">
+          <p class="fmt-guide__q">Chute de cheveux, barbe trouée, zones blanches, repousse ?</p>
+          <p class="fmt-guide__a">Le Pack 1 Mois <strong>ne servira à rien</strong>.<br>Tu <strong>DOIS</strong> prendre la <strong>Cure 3 Mois</strong>.</p>
+          <p class="fmt-guide__note">C'est le cycle minimum pour réactiver un bulbe.</p>
+        </div>
       </div>
 
       <!-- Quantité -->
@@ -182,6 +197,8 @@ function kgbUpd() {
   document.getElementById('pf-price').textContent = fmt;
   var bb = document.getElementById('bb-price');
   if (bb) bb.textContent = fmt;
+  var img = document.getElementById('pf-img');
+  if (img && radio.dataset.img) img.src = radio.dataset.img;
 }
 </script>
 
