@@ -190,7 +190,7 @@ details > summary::-webkit-details-marker { display: none; }
 .h-side { width: 40px; display: flex; align-items: center; }
 .h-side--right { justify-content: flex-end; }
 .h-logo { text-align: center; display: flex; align-items: center; justify-content: center; }
-.h-logo__img { height: 70px; width: auto; object-fit: contain; }
+.h-logo__img { height: 95px; width: auto; object-fit: contain; }
 .h-cart { position: relative; color: var(--cream); padding: 8px; }
 .h-cart svg { display: block; }
 .cart-dot {
