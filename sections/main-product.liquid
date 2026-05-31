@@ -42,9 +42,9 @@
 
     <p class="pdp__blurb" id="pf-blurb">
       {%- if product.handle contains 'pack' -%}
-        Cure complète 3 mois — résultats visibles et durables.
+        Cure complète 3 mois — chute, alopécie, barbe trouée, repousse.
       {%- else -%}
-        Format découverte — 1 mois de soin.
+        Uniquement contre les pellicules et démangeaisons.
       {%- endif -%}
     </p>
 
@@ -59,8 +59,8 @@
           {%- if p.handle == product.handle -%}{%- assign is_current = true -%}{%- endif -%}
           {%- assign is_pack = false -%}
           {%- if p.handle contains 'pack' -%}{%- assign is_pack = true -%}{%- endif -%}
-          {%- assign blurb = 'Le format découverte pour tester le rituel.' -%}
-          {%- if is_pack -%}{%- assign blurb = 'La cure complète recommandée pour des résultats durables.' -%}{%- endif -%}
+          {%- assign blurb = 'Uniquement contre les pellicules et démangeaisons.' -%}
+          {%- if is_pack -%}{%- assign blurb = 'Cure complète 3 mois — chute, alopécie, barbe trouée, repousse.' -%}{%- endif -%}
           <label class="vcard {% if is_current %}vcard--on{% endif %}">
             <input type="radio" name="id" value="{{ v.id }}"
               {% if is_current %}checked{% endif %}
