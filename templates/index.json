@@ -31,13 +31,6 @@
             "label": "Élimination de pellicule a 99%"
           }
         },
-        "stat_WaBnJR": {
-          "type": "stat",
-          "settings": {
-            "number": "1 mois",
-            "label": "Cuir chevelu assaini"
-          }
-        },
         "stat_ebK89E": {
           "type": "stat",
           "settings": {
@@ -55,7 +48,6 @@
       },
       "block_order": [
         "b1",
-        "stat_WaBnJR",
         "stat_ebK89E",
         "b2"
       ],
