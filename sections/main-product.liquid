@@ -42,9 +42,9 @@
 
     <p class="pdp__blurb" id="pf-blurb">
       {%- if product.handle contains 'pack' -%}
-        Cure complète 3 mois — chute, alopécie, barbe trouée, repousse.
+        Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse.
       {%- else -%}
-        Uniquement contre les pellicules et démangeaisons.
+        Pour pellicules & démangeaisons — résultats dès 2 semaines.
       {%- endif -%}
     </p>
 
@@ -59,8 +59,8 @@
           {%- if p.handle == product.handle -%}{%- assign is_current = true -%}{%- endif -%}
           {%- assign is_pack = false -%}
           {%- if p.handle contains 'pack' -%}{%- assign is_pack = true -%}{%- endif -%}
-          {%- assign blurb = 'Uniquement contre les pellicules et démangeaisons.' -%}
-          {%- if is_pack -%}{%- assign blurb = 'Cure complète 3 mois — chute, alopécie, barbe trouée, repousse.' -%}{%- endif -%}
+          {%- assign blurb = 'Pour pellicules & démangeaisons — résultats dès 2 semaines.' -%}
+          {%- if is_pack -%}{%- assign blurb = 'Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse.' -%}{%- endif -%}
           <label class="vcard {% if is_current %}vcard--on{% endif %}">
             <input type="radio" name="id" value="{{ v.id }}"
               {% if is_current %}checked{% endif %}
@@ -84,15 +84,14 @@
 
       <!-- Guide de sélection -->
       <div class="fmt-guide">
-        <p class="fl" style="margin-bottom:10px">⚠ LIS AVANT DE COMMANDER</p>
+        <p class="fl" style="margin-bottom:10px">⚠ QUEL FORMAT CHOISIR ?</p>
         <div class="fmt-guide__block fmt-guide__block--soft">
-          <p class="fmt-guide__q">Tu as uniquement des pellicules ou démangeaisons ?</p>
-          <p class="fmt-guide__a">Le <strong>savonnette 1 mois à 14,90€</strong> est fait pour toi. Résultats visibles dès 2 semaines.</p>
+          <p class="fmt-guide__q">Tu as des pellicules ou des démangeaisons ?</p>
+          <p class="fmt-guide__a">La <strong>savonnette 1 mois (14,90€)</strong> suffit. Résultats visibles dès 2 semaines.</p>
         </div>
         <div class="fmt-guide__block fmt-guide__block--hard">
-          <p class="fmt-guide__q">Chute de cheveux, alopécie, barbe trouée, zones sans repousse ?</p>
-          <p class="fmt-guide__a">La savonnette 1 mois <strong>ne donnera aucun résultat</strong> sur ces problèmes.<br>Il te faut <strong>obligatoirement la Cure 3 Mois</strong>.</p>
-          <p class="fmt-guide__note">Un bulbe pileux met 3 mois minimum à se réactiver. C'est biologique — il n'y a pas de raccourci.</p>
+          <p class="fmt-guide__q">Chute de cheveux, alopécie, barbe trouée, repousse ?</p>
+          <p class="fmt-guide__a">C'est le même savon — mais il faut <strong>obligatoirement la Cure 3 Mois</strong>.<br>Un bulbe pileux met 3 mois minimum à se réactiver. Avec 1 mois tu n'auras <strong>aucun résultat</strong> sur ces problèmes.</p>
         </div>
       </div>
 
