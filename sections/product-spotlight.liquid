@@ -1,3 +1,5 @@
+{%- assign featured = all_products[section.settings.product] -%}
+
 <section class="section spotlight">
   <div class="container">
     <p class="ew">{{ section.settings.eyebrow | default: 'Le produit' }}</p>
@@ -12,15 +14,14 @@
       {%- endif -%}
     </div>
 
-    {%- assign featured = all_products[section.settings.product] -%}
     {%- if featured != blank -%}
-      <a href="{{ featured.url }}" class="spotlight__card">
+      <a href="{{ featured.url }}" class="spotlight__card" id="spotlight-card" onclick="openProductDrawer(event)">
         <div>
           <div class="spotlight__card-name">{{ featured.title }}</div>
-          <div class="spotlight__card-sub">1 mois de soin</div>
+          <div class="spotlight__card-sub">Choisir mon format →</div>
         </div>
         <div class="spotlight__card-right">
-          <span class="spotlight__card-price g">{{ featured.price | money }}</span>
+          <span class="spotlight__card-price g">dès {{ featured.price_min | money }}</span>
           <span class="spotlight__card-cta">VOIR →</span>
         </div>
       </a>
@@ -28,7 +29,7 @@
       <a href="/collections/nos-produits" class="spotlight__card">
         <div>
           <div class="spotlight__card-name">Savonnette 75g</div>
-          <div class="spotlight__card-sub">1 mois de soin</div>
+          <div class="spotlight__card-sub">Choisir mon format →</div>
         </div>
         <div class="spotlight__card-right">
           <span class="spotlight__card-price g">14,80&nbsp;€</span>
@@ -38,6 +39,61 @@
     {%- endif -%}
   </div>
 </section>
+
+{%- if featured != blank -%}
+  <!-- Backdrop -->
+  <div class="dback" id="dback" onclick="closeProductDrawer()"></div>
+
+  <!-- Bottom sheet produit -->
+  <div class="drawer" id="product-drawer">
+    <div class="drawer__bar"></div>
+    <button class="drawer__close" onclick="closeProductDrawer()" aria-label="Fermer">×</button>
+
+    <p class="ew" style="margin-bottom:10px">Savon noir capillaire</p>
+    <h2 style="font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.1;letter-spacing:-0.3px;margin-bottom:8px">{{ featured.title }}</h2>
+
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px">
+      {%- for i in (1..5) -%}
+        <svg width="13" height="13" viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.26 5.78.72-4.27 3.95 1.12 5.72L10 14.4l-5.1 2.75 1.12-5.72L1.75 7.48l5.78-.72z" fill="#C9A84C"/></svg>
+      {%- endfor -%}
+      <span style="font-size:12px;color:var(--muted)">4,9 · 124 avis</span>
+    </div>
+
+    <form action="/cart/add" method="post" id="drawer-form">
+      <input type="hidden" name="quantity" value="1">
+
+      <span class="fl" style="margin-bottom:12px;display:block">CHOISIR LE FORMAT</span>
+      <div class="variants" style="margin-bottom:24px">
+        {%- for v in featured.variants -%}
+          <label class="vcard {% if forloop.index == 2 or featured.variants.size == 1 %}vcard--on{% endif %}">
+            <input type="radio" name="id" value="{{ v.id }}"
+              {% if forloop.index == 2 or featured.variants.size == 1 %}checked{% endif %}
+              onchange="document.querySelectorAll('#product-drawer .vcard').forEach(c=>c.classList.remove('vcard--on'));this.closest('.vcard').classList.add('vcard--on')">
+            <div>
+              <span class="vcard__name">{{ v.title }}</span>
+              <span class="vcard__dur">{% if v.title contains '3' or v.title contains 'Pack' %}Cure complète · 3 mois{% else %}1 mois de soin{% endif %}</span>
+            </div>
+            <div class="vcard__right">
+              <span class="vcard__price">{{ v.price | money }}</span>
+              {%- if v.compare_at_price > v.price -%}
+                <span class="vcard__badge">Le plus choisi</span>
+              {%- endif -%}
+              <span class="vcard__radio"></span>
+            </div>
+          </label>
+        {%- endfor -%}
+      </div>
+
+      <button type="submit" name="add" class="btn btn-gold btn-full btn-lg">
+        Ajouter au panier
+      </button>
+    </form>
+
+    <a href="{{ featured.url }}" style="display:block;text-align:center;margin-top:16px;font-size:12.5px;color:var(--muted);text-decoration:underline">
+      Voir tous les détails du produit
+    </a>
+  </div>
+{%- endif -%}
 
 {% schema %}
 {

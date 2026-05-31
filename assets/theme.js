@@ -1,3 +1,19 @@
+// Product drawer
+function openProductDrawer(e) {
+  if (e) e.preventDefault();
+  document.getElementById('product-drawer').classList.add('open');
+  document.getElementById('dback').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeProductDrawer() {
+  document.getElementById('product-drawer').classList.remove('open');
+  document.getElementById('dback').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeProductDrawer();
+});
+
 // Sticky bottom bar — hide when main ATC button is visible
 const bottomBar = document.querySelector('.stickybar');
 const productForm = document.getElementById('product-form');
