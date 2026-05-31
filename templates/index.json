@@ -27,29 +27,37 @@
         "b1": {
           "type": "stat",
           "settings": {
-            "number": "−100%",
-            "label": "Chute stoppée dès 1 mois"
+            "number": "3 semaine",
+            "label": "Élimination de pellicule a 99%"
+          }
+        },
+        "stat_WaBnJR": {
+          "type": "stat",
+          "settings": {
+            "number": "1 mois",
+            "label": "Cuir chevelu assaini"
+          }
+        },
+        "stat_ebK89E": {
+          "type": "stat",
+          "settings": {
+            "number": "2 mois",
+            "label": "Chute stoppée dès le 2 mois"
           }
         },
         "b2": {
           "type": "stat",
           "settings": {
-            "number": "1 mois",
+            "number": "3 mois",
             "label": "Première repousse visible"
-          }
-        },
-        "b3": {
-          "type": "stat",
-          "settings": {
-            "number": "2 sem.",
-            "label": "Cuir chevelu assaini"
           }
         }
       },
       "block_order": [
         "b1",
-        "b2",
-        "b3"
+        "stat_WaBnJR",
+        "stat_ebK89E",
+        "b2"
       ],
       "settings": {}
     },
