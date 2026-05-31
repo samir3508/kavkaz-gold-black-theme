@@ -72,6 +72,15 @@
         "after": "shopify://shop_images/IMG_0961.jpg"
       }
     },
+    "before_after_bK4pNF": {
+      "type": "before-after",
+      "settings": {
+        "eyebrow": "Résultats réels",
+        "title": "La cure de 3 mois",
+        "before": "shopify://shop_images/IMG_0981.png",
+        "after": "shopify://shop_images/IMG_0980.png"
+      }
+    },
     "ingredients": {
       "type": "ingredients",
       "blocks": {
@@ -297,6 +306,7 @@
     "benefits",
     "spotlight",
     "before_after",
+    "before_after_bK4pNF",
     "ingredients",
     "ritual",
     "social",
