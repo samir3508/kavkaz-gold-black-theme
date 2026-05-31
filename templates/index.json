@@ -250,7 +250,7 @@
     "cta": {
       "type": "closing-cta",
       "settings": {
-        "title": "Commencez votre",
+        "title": "Commencez votre ",
         "title_em": "cure",
         "code": "LIVRAISON50",
         "cta_label": "Voir les formats",
