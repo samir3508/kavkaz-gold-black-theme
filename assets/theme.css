@@ -388,6 +388,41 @@ details > summary::-webkit-details-marker { display: none; }
   border: 1px solid rgba(201,168,76,0.18);
 }
 
+/* ── FAQ ────────────────────────────────────── */
+.faq { background: var(--ink-2); }
+.faq__list { margin-top: 36px; display: flex; flex-direction: column; gap: 0; }
+.faq__item {
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+.faq__q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cream);
+  cursor: pointer;
+  list-style: none;
+  gap: 12px;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::after {
+  content: '+';
+  color: var(--gold);
+  font-size: 22px;
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.faq__item[open] .faq__q::after { content: '−'; }
+.faq__a {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.7;
+  padding-bottom: 18px;
+}
+
 /* ── Benefits List ─────────────────────────── */
 .ben-list { background: var(--black); }
 .ben-list__grid { display: flex; flex-direction: column; gap: 0; margin-top: 36px; }

@@ -1,0 +1,36 @@
+<section class="section faq">
+  <div class="container">
+    <p class="ew ew--c">{{ section.settings.eyebrow | default: 'FAQ' }}</p>
+    <h2 class="sh tc">{{ section.settings.title | default: 'Questions ' }}<em class="g-italic">{{ section.settings.title_em | default: 'fréquentes' }}</em>.</h2>
+
+    <div class="faq__list">
+      {%- for block in section.blocks -%}
+        <details class="faq__item" {{ block.shopify_attributes }}>
+          <summary class="faq__q">{{ block.settings.question }}</summary>
+          <div class="faq__a">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Label" },
+    { "type": "text", "id": "title", "label": "Titre" },
+    { "type": "text", "id": "title_em", "label": "Mot italique or" }
+  ],
+  "blocks": [{
+    "type": "item",
+    "name": "Question",
+    "settings": [
+      { "type": "text", "id": "question", "label": "Question" },
+      { "type": "textarea", "id": "answer", "label": "Réponse" }
+    ]
+  }],
+  "presets": [{ "name": "FAQ" }]
+}
+{% endschema %}
