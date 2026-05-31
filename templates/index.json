@@ -130,7 +130,7 @@
       "type": "before-after",
       "settings": {
         "eyebrow": "Cure complète",
-        "title": "La cure de 3 mois",
+        "title": "La cure de 3 mois = 5 bénéfice",
         "before": "shopify://shop_images/IMG_0958.jpg",
         "after": "shopify://shop_images/IMG_0961.jpg",
         "label_before": "SEMAINE 0",
