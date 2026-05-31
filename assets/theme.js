@@ -17,6 +17,17 @@ if (header) {
   }, { passive: true });
 }
 
+// Accordions — un seul ouvert à la fois
+document.querySelectorAll('.acc').forEach(acc => {
+  acc.addEventListener('toggle', function() {
+    if (this.open) {
+      document.querySelectorAll('.acc').forEach(other => {
+        if (other !== this) other.removeAttribute('open');
+      });
+    }
+  }, true);
+});
+
 // Scroll reveal animations
 const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
