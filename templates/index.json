@@ -67,7 +67,9 @@
       "type": "before-after",
       "settings": {
         "eyebrow": "Résultats réels",
-        "title": "La cure de 3 mois"
+        "title": "La cure de 3 mois",
+        "before": "shopify://shop_images/IMG_0958.jpg",
+        "after": "shopify://shop_images/IMG_0961.jpg"
       }
     },
     "ingredients": {
