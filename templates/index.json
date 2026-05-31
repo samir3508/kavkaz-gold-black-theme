@@ -27,29 +27,29 @@
         "b1": {
           "type": "stat",
           "settings": {
-            "number": "3 semaine",
-            "label": "Élimination de pellicule a 99%"
-          }
-        },
-        "stat_ebK89E": {
-          "type": "stat",
-          "settings": {
-            "number": "2 mois",
-            "label": "Chute stoppée dès le 2 mois"
+            "number": "2 semaines",
+            "label": "Pellicules & démangeaisons éliminées"
           }
         },
         "b2": {
           "type": "stat",
           "settings": {
+            "number": "1 mois",
+            "label": "Chute stoppée, repousse amorcée"
+          }
+        },
+        "b3": {
+          "type": "stat",
+          "settings": {
             "number": "3 mois",
-            "label": "Première repousse visible"
+            "label": "Cure complète, résultats visibles"
           }
         }
       },
       "block_order": [
         "b1",
-        "stat_ebK89E",
-        "b2"
+        "b2",
+        "b3"
       ],
       "settings": {}
     },
@@ -78,99 +78,99 @@
         "i1": {
           "type": "item",
           "settings": {
-            "name": "Usma",
-            "role": "Densifie & fortifie"
+            "name": "Huile d'Usma",
+            "role": "Nourrit le bulbe, génère la repousse"
           }
         },
         "i2": {
           "type": "item",
           "settings": {
-            "name": "Ortie",
-            "role": "Anti-chute"
+            "name": "Extrait d'Ail Noir",
+            "role": "Anti-chute, fortifie les racines"
           }
         },
         "i3": {
           "type": "item",
           "settings": {
-            "name": "Gingembre",
-            "role": "Stimule la circulation"
+            "name": "Extrait de Gingembre",
+            "role": "Boost la circulation au bulbe"
           }
         },
         "i4": {
           "type": "item",
           "settings": {
-            "name": "Nigelle noire",
-            "role": "Apaise le cuir chevelu"
+            "name": "Huile de Ricin",
+            "role": "Gaine, épaissit & durcit le poil"
           }
         },
         "i5": {
           "type": "item",
           "settings": {
-            "name": "Huile de coco",
-            "role": "Nourrit en profondeur"
+            "name": "Huile de Graine de Nigelle",
+            "role": "Répare & renforce la barrière cutanée"
           }
         },
         "i6": {
           "type": "item",
           "settings": {
-            "name": "Ricin",
-            "role": "Active la repousse"
+            "name": "Extrait d'Orchis Sauvage",
+            "role": "Fortifie la structure de la racine"
           }
         },
         "i7": {
           "type": "item",
           "settings": {
-            "name": "Romarin",
-            "role": "Stimule la pousse"
+            "name": "Huile de Baies de Laurier",
+            "role": "Antibactérien, élimine les pellicules"
           }
         },
         "i8": {
           "type": "item",
           "settings": {
-            "name": "Ortie blanche",
-            "role": "Régule le sébum"
+            "name": "Suc d'Aloe Vera",
+            "role": "Hydratation intense, stoppe les tiraillements"
           }
         },
         "i9": {
           "type": "item",
           "settings": {
-            "name": "Argan",
-            "role": "Brillance & souplesse"
+            "name": "Huile d'Olive",
+            "role": "Acides gras essentiels, protège l'épiderme"
           }
         },
         "i10": {
           "type": "item",
           "settings": {
-            "name": "Aloe vera",
-            "role": "Hydrate & apaise"
+            "name": "Huile d'Amande Douce",
+            "role": "Adoucit, évite le dessèchement"
           }
         },
         "i11": {
           "type": "item",
           "settings": {
-            "name": "Henné neutre",
-            "role": "Gaine la fibre"
+            "name": "Extrait d'Ortie Piquante",
+            "role": "Régule le sébum, anti-gras"
           }
         },
         "i12": {
           "type": "item",
           "settings": {
-            "name": "Argile",
-            "role": "Purifie"
+            "name": "Extrait de Romarin",
+            "role": "Antioxydant, maintient le bulbe sain"
           }
         },
         "i13": {
           "type": "item",
           "settings": {
-            "name": "Miel brut",
-            "role": "Nourrit"
+            "name": "Extrait de Camomille",
+            "role": "Anti-inflammatoire, apaise les peaux sensibles"
           }
         },
         "i14": {
           "type": "item",
           "settings": {
-            "name": "Charbon végétal",
-            "role": "Détoxifie"
+            "name": "Argile Verte & Boue Thermale",
+            "role": "Détoxifie, aspire les impuretés"
           }
         }
       },
