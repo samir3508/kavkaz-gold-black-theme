@@ -27,8 +27,8 @@
         "b1": {
           "type": "stat",
           "settings": {
-            "number": "2 semaines",
-            "label": "Pellicules & démangeaisons éliminées"
+            "number": "2 à 3 sem",
+            "label": "Pellicules & démangeaisons éliminées, bulbe nettoyé désinfecté"
           }
         },
         "b2": {
@@ -66,14 +66,54 @@
     "ben_list": {
       "type": "benefits-list",
       "blocks": {
-        "bn1": { "type": "benefit", "settings": { "title": "Réactive les bulbes endormis", "desc": "Repousse sur les zones nues — trous dans la barbe, plaques, ligne de cheveux qui recule." } },
-        "bn2": { "type": "benefit", "settings": { "title": "Stoppe la chute", "desc": "Fortifie le cheveu et le poil dès la racine pour bloquer la perte excessive, dans la douche et sur l'oreiller." } },
-        "bn3": { "type": "benefit", "settings": { "title": "Accélère la croissance", "desc": "Boost la vitesse de pousse naturelle grâce à une stimulation sanguine maximale du bulbe." } },
-        "bn4": { "type": "benefit", "settings": { "title": "Densifie et épaissit", "desc": "Le poil gaine et pousse plus noir, plus dur, plus épais. Effet de densité visible rapidement." } },
-        "bn5": { "type": "benefit", "settings": { "title": "Assainit le cuir chevelu", "desc": "Élimine les pellicules, stoppe les démangeaisons, régule l'excès de sébum et protège des agressions." } }
+        "bn1": {
+          "type": "benefit",
+          "settings": {
+            "title": "Réactive les bulbes endormis",
+            "desc": "Repousse sur les zones nues — trous dans la barbe, plaques, ligne de cheveux qui recule."
+          }
+        },
+        "bn2": {
+          "type": "benefit",
+          "settings": {
+            "title": "Stoppe la chute",
+            "desc": "Fortifie le cheveu et le poil dès la racine pour bloquer la perte excessive, dans la douche et sur l'oreiller."
+          }
+        },
+        "bn3": {
+          "type": "benefit",
+          "settings": {
+            "title": "Accélère la croissance",
+            "desc": "Boost la vitesse de pousse naturelle grâce à une stimulation sanguine maximale du bulbe."
+          }
+        },
+        "bn4": {
+          "type": "benefit",
+          "settings": {
+            "title": "Densifie et épaissit",
+            "desc": "Le poil gaine et pousse plus noir, plus dur, plus épais. Effet de densité visible rapidement."
+          }
+        },
+        "bn5": {
+          "type": "benefit",
+          "settings": {
+            "title": "Assainit le cuir chevelu",
+            "desc": "Élimine les pellicules, stoppe les démangeaisons, régule l'excès de sébum et protège des agressions."
+          }
+        }
       },
-      "block_order": ["bn1","bn2","bn3","bn4","bn5"],
-      "settings": { "eyebrow": "Ce que ça fait", "title": "Les ", "title_em": "5 bénéfices" }
+      "block_order": [
+        "bn1",
+        "bn2",
+        "bn3",
+        "bn4",
+        "bn5"
+      ],
+      "settings": {
+        "eyebrow": "Ce que ça fait",
+        "title": "Les",
+        "title_em": "5 bénéfices"
+      }
     },
     "before_after": {
       "type": "before-after",
@@ -217,7 +257,7 @@
       ],
       "settings": {
         "eyebrow": "14 ingrédients · 0 compromis",
-        "title": "Tout vient de la ",
+        "title": "Tout vient de la",
         "title_em": "nature",
         "subtitle": "Fabriqué par saponification à froid — les huiles ne sont jamais chauffées pour préserver 100% de la puissance de chaque actif. Séchage artisanal de 5 semaines pour un bloc ultra-concentré."
       }
@@ -273,23 +313,10 @@
         "title": "5 gestes, tous les jours"
       }
     },
-    "faq": {
-      "type": "faq",
-      "blocks": {
-        "fq1": { "type": "item", "settings": { "question": "Pour qui est ce savon ?", "answer": "Pour les femmes et les hommes souffrant de chute de cheveux, alopécie, barbe à trous, pellicules ou cuir chevelu irrité." } },
-        "fq2": { "type": "item", "settings": { "question": "Quelle est la différence entre la savonnette 1 mois et le pack 3 mois ?", "answer": "C'est exactement le même savon — seule la durée de traitement change.\n\nSavonnette 1 mois (14,90€) : efficace pour les pellicules et démangeaisons. Résultats dès 2 semaines.\n\nPack 3 mois (39,90€) : obligatoire pour la chute, l'alopécie, la barbe trouée et la repousse. Un bulbe pileux met 3 mois minimum à se réactiver. Avec 1 mois, aucun résultat sur ces problèmes." } },
-        "fq3": { "type": "item", "settings": { "question": "Comment utiliser le savon ?", "answer": "5 gestes, tous les jours : mouiller les cheveux, frotter le savon pour créer une mousse, masser le cuir chevelu 2 minutes, laisser poser 5 minutes, rincer abondamment." } },
-        "fq4": { "type": "item", "settings": { "question": "Quand vais-je voir les résultats ?", "answer": "Pellicules & démangeaisons : dès 2 à 3 semaines. Chute ralentie : dès 1 mois. Repousse visible : après 3 mois de cure complète." } },
-        "fq5": { "type": "item", "settings": { "question": "Le savon est-il 100% naturel ?", "answer": "Oui. 14 actifs végétaux et minéraux. Zéro sulfate, zéro parabène, zéro silicone. Fabriqué par saponification à froid — les actifs sont préservés à 100%." } },
-        "fq6": { "type": "item", "settings": { "question": "Quels sont les délais de livraison ?", "answer": "Expédition sous 48h via Mondial Relay. Livraison en 2 à 5 jours ouvrés. Livraison offerte dès 50€ avec le code LIVRAISON50." } }
-      },
-      "block_order": ["fq1","fq2","fq3","fq4","fq5","fq6"],
-      "settings": { "eyebrow": "FAQ", "title": "Questions ", "title_em": "fréquentes" }
-    },
     "cta": {
       "type": "closing-cta",
       "settings": {
-        "title": "Commencez votre ",
+        "title": "Commencez votre",
         "title_em": "cure",
         "code": "LIVRAISON50",
         "cta_label": "Voir les formats",
@@ -306,7 +333,6 @@
     "before_after_cure",
     "ingredients",
     "ritual",
-    "faq",
     "cta"
   ]
 }
