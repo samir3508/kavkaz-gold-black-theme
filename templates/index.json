@@ -115,6 +115,17 @@
         "title_em": "5 bénéfices"
       }
     },
+    "before_after_cure": {
+      "type": "before-after",
+      "settings": {
+        "eyebrow": "Cure complète",
+        "title": "La cure de 3 mois = Les 5 bénéfices",
+        "before": "shopify://shop_images/IMG_0958.jpg",
+        "after": "shopify://shop_images/IMG_0961.jpg",
+        "label_before": "SEMAINE 0",
+        "label_after": "SEMAINE 12"
+      }
+    },
     "before_after": {
       "type": "before-after",
       "settings": {
@@ -124,17 +135,6 @@
         "after": "shopify://shop_images/IMG_0980.png",
         "label_before": "SEMAINE 0",
         "label_after": "SEMAINE 3"
-      }
-    },
-    "before_after_cure": {
-      "type": "before-after",
-      "settings": {
-        "eyebrow": "Cure complète",
-        "title": "La cure de 3 mois = 5 bénéfice",
-        "before": "shopify://shop_images/IMG_0958.jpg",
-        "after": "shopify://shop_images/IMG_0961.jpg",
-        "label_before": "SEMAINE 0",
-        "label_after": "SEMAINE 12"
       }
     },
     "ingredients": {
@@ -329,8 +329,8 @@
     "benefits",
     "spotlight",
     "ben_list",
-    "before_after",
     "before_after_cure",
+    "before_after",
     "ingredients",
     "ritual",
     "cta"
