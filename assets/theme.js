@@ -1,14 +1,3 @@
-// Sticky bottom bar — hide when main ATC button is visible
-const bottomBar = document.querySelector('.stickybar');
-const productForm = document.getElementById('product-form');
-
-if (bottomBar && productForm) {
-  const obs = new IntersectionObserver(entries => {
-    bottomBar.style.display = entries[0].isIntersecting ? 'none' : 'flex';
-  }, { threshold: 0 });
-  obs.observe(productForm);
-}
-
 // Header shadow on scroll
 const header = document.getElementById('site-header');
 if (header) {
