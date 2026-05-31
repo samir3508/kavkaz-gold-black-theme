@@ -1,12 +1,12 @@
-<section class="closing-cta section-pad">
-  <div class="container text-center">
-    <h2 class="closing-cta__title">
-      {{ section.settings.title | default: 'Commencez votre ' }}<em class="gold-text">{{ section.settings.title_em | default: 'cure' }}</em>
+<section class="section closing">
+  <div class="container tc">
+    <h2 class="closing__title">
+      {{ section.settings.title | default: 'Commencez votre ' }}<em class="g-italic">{{ section.settings.title_em | default: 'cure' }}</em>
     </h2>
-    <p class="closing-cta__sub">
-      Livraison offerte dès 50€ avec le code <span style="color:#C9A84C">{{ section.settings.code | default: 'LIVRAISON50' }}</span>.
+    <p class="closing__sub">
+      Livraison offerte dès 50€ avec le code <span class="closing__code">{{ section.settings.code | default: 'LIVRAISON50' }}</span>.
     </p>
-    <a href="{{ section.settings.cta_url | default: '/collections/all' }}" class="btn btn-gold btn-lg">
+    <a href="{{ section.settings.cta_url | default: '/collections/nos-produits' }}" class="btn btn-gold btn-lg">
       {{ section.settings.cta_label | default: 'Voir les formats' }}
     </a>
   </div>

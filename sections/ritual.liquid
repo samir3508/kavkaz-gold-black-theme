@@ -1,14 +1,15 @@
-<section class="ritual section-pad">
+<section class="section ritual">
   <div class="container">
-    <p class="eyebrow">{{ section.settings.eyebrow | default: 'Le rituel' }}</p>
-    <h2 class="section-title">{{ section.settings.title | default: '4 gestes, 3 fois par semaine' }}</h2>
-    <div class="ritual__steps">
+    <p class="ew">{{ section.settings.eyebrow | default: 'Le rituel' }}</p>
+    <h2 class="sh">{{ section.settings.title | default: '4 gestes, 3 fois par semaine' }}</h2>
+
+    <div class="ritual__list">
       {%- for block in section.blocks -%}
-        <div class="ritual__step" {{ block.shopify_attributes }}>
+        <div class="ritual__item" {{ block.shopify_attributes }}>
           <div class="ritual__num">{{ forloop.index }}</div>
-          <div class="ritual__content">
-            <div class="ritual__step-title">{{ block.settings.title }}</div>
-            <div class="ritual__step-desc">{{ block.settings.desc }}</div>
+          <div class="ritual__body">
+            <div class="ritual__title">{{ block.settings.title }}</div>
+            <div class="ritual__desc">{{ block.settings.desc }}</div>
           </div>
         </div>
       {%- endfor -%}

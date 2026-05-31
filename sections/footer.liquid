@@ -1,8 +1,8 @@
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-wordmark">KAVKAZ</div>
-    <div class="footer-wordmark__sub">GOLD · BLACK</div>
-    <nav class="footer-nav">
+    <div class="ft-logo">KAVKAZ</div>
+    <div class="ft-sub">GOLD · BLACK</div>
+    <nav class="ft-nav">
       {%- for link in linklists[section.settings.menu].links -%}
         <a href="{{ link.url }}">{{ link.title }}</a>
       {%- else -%}
@@ -12,7 +12,7 @@
         <a href="/pages/mentions-legales-cgv">Mentions légales</a>
       {%- endfor -%}
     </nav>
-    <p class="footer-copy">© {{ 'now' | date: '%Y' }} Kavkaz Gold Black · Fabriqué à partir d'ingrédients du Caucase</p>
+    <p class="ft-copy">© {{ 'now' | date: '%Y' }} Kavkaz Gold Black · Fabriqué à partir d'ingrédients du Caucase</p>
   </div>
 </footer>
 

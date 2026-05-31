@@ -1,4 +1,4 @@
-<div class="cart-page section-pad">
+<div class="cart-page">
   <div class="container">
     {%- if cart.item_count == 0 -%}
       <div class="cart-empty">
@@ -11,36 +11,36 @@
       {%- assign free_threshold = 50 -%}
       {%- assign pct = subtotal | divided_by: free_threshold | times: 100 | at_most: 100 -%}
 
-      <!-- Barre livraison offerte -->
-      <div class="shipping-bar">
-        <div class="shipping-bar__text">
+      <!-- Barre livraison -->
+      <div class="ship-bar">
+        <div class="ship-bar__msg">
           {%- if subtotal >= free_threshold -%}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z" stroke="#C9A84C" stroke-width="1.4" stroke-linejoin="round"/></svg>
-            <strong style="color:#C9A84C">Livraison offerte</strong> débloquée 🎉
+            <strong style="color:#C9A84C">Livraison offerte</strong>&nbsp;débloquée 🎉
           {%- else -%}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
             Plus que <strong>{{ free_threshold | minus: subtotal | money }}</strong> pour la livraison offerte
           {%- endif -%}
         </div>
-        <div class="shipping-bar__track">
-          <div class="shipping-bar__fill" style="width:{{ pct }}%"></div>
+        <div class="ship-bar__track">
+          <div class="ship-bar__fill" style="width:{{ pct }}%"></div>
         </div>
       </div>
 
       {%- form 'cart', cart -%}
         <div class="cart-items">
           {%- for item in cart.items -%}
-            <div class="cart-item">
-              <div class="cart-item__img">
+            <div class="citem">
+              <div class="citem__img">
                 {%- if item.image -%}
                   <img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}" width="80" height="80" loading="lazy">
                 {%- endif -%}
               </div>
-              <div class="cart-item__body">
-                <div class="cart-item__name">{{ item.product.title }}</div>
-                <div class="cart-item__variant">{{ item.variant.title }}</div>
-                <div class="cart-item__price gold-text">{{ item.line_price | money }}</div>
-                <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cart-item__remove">Supprimer ×</a>
+              <div class="citem__body">
+                <div class="citem__name">{{ item.product.title }}</div>
+                <div class="citem__var">{{ item.variant.title }}</div>
+                <div class="citem__price g">{{ item.line_price | money }}</div>
+                <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="citem__rm">Supprimer ×</a>
               </div>
             </div>
           {%- endfor -%}
@@ -49,8 +49,8 @@
         <!-- Code promo -->
         <div class="promo-row">
           {%- if cart.cart_level_discount_applications.size == 0 -%}
-            <input type="text" name="discount" placeholder="Code promo" value="LIVRAISON50" class="promo-input">
-            <button type="submit" name="update" class="btn btn-outline">OK</button>
+            <input type="text" name="discount" placeholder="Code promo" value="LIVRAISON50" class="promo-in">
+            <button type="submit" name="update" class="btn btn-ghost">OK</button>
           {%- else -%}
             <span style="color:#C9A84C">✓ Code appliqué</span>
           {%- endif -%}
@@ -66,16 +66,18 @@
             <span>Livraison</span>
             <span>{% if subtotal >= free_threshold %}<span style="color:#C9A84C">Offerte</span>{% else %}5,00 €{% endif %}</span>
           </div>
-          <div class="cart-recap__row cart-recap__row--total">
+          <div class="cart-recap__row cart-recap__total">
             <span>Total</span>
-            <span class="gold-text">{% if subtotal >= free_threshold %}{{ cart.total_price | money }}{% else %}{{ cart.total_price | plus: 500 | money }}{% endif %}</span>
+            <span class="g" style="font-family:var(--serif);font-size:26px">{% if subtotal >= free_threshold %}{{ cart.total_price | money }}{% else %}{{ cart.total_price | plus: 500 | money }}{% endif %}</span>
           </div>
         </div>
 
-        <button type="submit" name="checkout" class="btn btn-gold btn-full btn-lg">Passer la commande</button>
-        <a href="/collections/nos-produits" class="cart-continue">Continuer mes achats</a>
+        <div class="cart-actions">
+          <button type="submit" name="checkout" class="btn btn-gold btn-full btn-lg">Passer la commande</button>
+          <a href="/collections/nos-produits" class="cart-back">Continuer mes achats</a>
+        </div>
 
-        <div class="cart-badges">
+        <div class="trust-row">
           <span>🔒 Paiement sécurisé</span>
           <span>📦 Mondial Relay</span>
           <span>🌿 Naturel</span>

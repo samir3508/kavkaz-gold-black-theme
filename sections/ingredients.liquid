@@ -1,14 +1,15 @@
-<section class="ingredients section-pad" style="background:var(--cream);color:var(--ink)">
+<section class="section section--cream ingr">
   <div class="container">
-    <p class="eyebrow" style="color:var(--gray)">{{ section.settings.eyebrow | default: '14 ingrédients · 0 compromis' }}</p>
-    <h2 class="section-title" style="color:var(--ink)">
-      {{ section.settings.title | default: 'Tout vient de la ' }}<em class="gold-text-dark">{{ section.settings.title_em | default: 'nature' }}</em>.
+    <p class="ew ew--dark">{{ section.settings.eyebrow | default: '14 ingrédients · 0 compromis' }}</p>
+    <h2 class="sh" style="color:var(--ink)">
+      {{ section.settings.title | default: 'Tout vient de la ' }}<em class="g-italic">{{ section.settings.title_em | default: 'nature' }}</em>.
     </h2>
-    <div class="ingredients__grid">
+
+    <div class="ingr__grid">
       {%- for block in section.blocks -%}
-        <div class="ingredient-row" {{ block.shopify_attributes }}>
-          <span class="ingredient-row__name">{{ block.settings.name }}</span>
-          <span class="ingredient-row__role">{{ block.settings.role }}</span>
+        <div class="ingr__row" {{ block.shopify_attributes }}>
+          <span class="ingr__name">{{ block.settings.name }}</span>
+          <span class="ingr__role">{{ block.settings.role }}</span>
         </div>
       {%- endfor -%}
     </div>

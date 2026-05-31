@@ -1,29 +1,37 @@
-<section class="social-proof section-pad" style="background:var(--ink)">
+<section class="section proof">
   <div class="container">
-    <div class="ig-card">
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#C9A84C" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#C9A84C" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1.1" fill="#C9A84C"/></svg>
+
+    <div class="ig-banner">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" flex-shrink="0" style="flex-shrink:0"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#C9A84C" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#C9A84C" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1.1" fill="#C9A84C"/></svg>
       <div>
-        <div class="ig-card__stat"><span class="gold-text">{{ section.settings.ig_views | default: '38 000' }}</span> <span class="ig-card__sublabel">{{ section.settings.ig_label | default: 'vues en 7 jours' }}</span></div>
-        <div class="ig-card__sub">La communauté Kavkaz grandit sur Instagram</div>
+        <div>
+          <span class="ig-banner__num g">{{ section.settings.ig_views | default: '38 000' }}</span>
+          <span class="ig-banner__lbl"> {{ section.settings.ig_label | default: 'vues en 7 jours' }}</span>
+        </div>
+        <div class="ig-banner__sub">La communauté Kavkaz grandit sur Instagram</div>
       </div>
     </div>
 
-    <p class="eyebrow" style="margin-top:2rem">{{ section.settings.title | default: 'Avis vérifiés' }}</p>
+    <p class="ew" style="margin-bottom:16px">{{ section.settings.title | default: 'Avis vérifiés' }}</p>
 
     <div class="reviews">
       {%- for block in section.blocks -%}
-        <div class="review-card" {{ block.shopify_attributes }}>
-          <div class="review-stars">
+        <div class="review" {{ block.shopify_attributes }}>
+          <div class="review__stars">
             {%- assign r = block.settings.rating | default: 5 -%}
             {%- for i in (1..5) -%}
               <svg width="13" height="13" viewBox="0 0 20 20"><path d="M10 1.5l2.47 5.26 5.78.72-4.27 3.95 1.12 5.72L10 14.4l-5.1 2.75 1.12-5.72L1.75 7.48l5.78-.72z" fill="{% if i <= r %}#C9A84C{% else %}rgba(201,168,76,0.22){% endif %}"/></svg>
             {%- endfor -%}
           </div>
-          <p class="review-text">"{{ block.settings.text }}"</p>
-          <div class="review-author"><span style="color:#C9A84C">{{ block.settings.name }}</span> <span style="color:rgba(249,245,240,0.4)">· {{ block.settings.location }}</span></div>
+          <p class="review__text">"{{ block.settings.text }}"</p>
+          <div class="review__author">
+            <span class="review__name">{{ block.settings.name }}</span>
+            <span class="review__loc"> · {{ block.settings.location }}</span>
+          </div>
         </div>
       {%- endfor -%}
     </div>
+
   </div>
 </section>
 

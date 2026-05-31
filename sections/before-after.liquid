@@ -1,23 +1,24 @@
-<section class="before-after section-pad" style="background:var(--ink)">
+<section class="section ba">
   <div class="container">
-    <p class="eyebrow eyebrow--center">{{ section.settings.eyebrow | default: 'Résultats réels' }}</p>
-    <h2 class="section-title text-center">{{ section.settings.title | default: 'La cure de 3 mois' }}</h2>
-    <div class="before-after__grid">
-      <div class="before-after__item">
+    <p class="ew ew--c">{{ section.settings.eyebrow | default: 'Résultats réels' }}</p>
+    <h2 class="sh tc">{{ section.settings.title | default: 'La cure de 3 mois' }}</h2>
+
+    <div class="ba__grid">
+      <div>
         {%- if section.settings.before != blank -%}
-          <img src="{{ section.settings.before | image_url: width: 600 }}" alt="Avant" class="before-after__img" loading="lazy">
+          <img src="{{ section.settings.before | image_url: width: 600 }}" alt="Avant" class="ba__img" loading="lazy">
         {%- else -%}
-          <div class="img-placeholder"><span>Photo avant</span></div>
+          <div class="placeholder ba__img"><span>Photo avant</span></div>
         {%- endif -%}
-        <p class="before-after__tag before-after__tag--muted">SEMAINE 0</p>
+        <p class="ba__tag ba__tag--muted">SEMAINE 0</p>
       </div>
-      <div class="before-after__item">
+      <div>
         {%- if section.settings.after != blank -%}
-          <img src="{{ section.settings.after | image_url: width: 600 }}" alt="Après" class="before-after__img" loading="lazy">
+          <img src="{{ section.settings.after | image_url: width: 600 }}" alt="Après" class="ba__img" loading="lazy">
         {%- else -%}
-          <div class="img-placeholder"><span>Photo après</span></div>
+          <div class="placeholder ba__img"><span>Photo après</span></div>
         {%- endif -%}
-        <p class="before-after__tag before-after__tag--gold">SEMAINE 12</p>
+        <p class="ba__tag ba__tag--gold">SEMAINE 12</p>
       </div>
     </div>
   </div>
