@@ -37,11 +37,14 @@
       <span class="pdp__price-now g" id="pf-price">{{ product.price | money }}</span>
     </div>
 
+    <p class="pdp__desc">Savon noir artisanal du Caucase, fabriqué par <strong>saponification à froid</strong> avec une cure de séchage de 5 semaines. 14 actifs végétaux concentrés. Zéro sulfate, zéro parabène, zéro silicone.</p>
+    <p class="pdp__desc">Pour <strong>femmes et hommes</strong> souffrant de chute de cheveux, alopécie, barbe à trous, pellicules ou cuir chevelu irrité.</p>
+
     <p class="pdp__blurb" id="pf-blurb">
       {%- if product.handle contains 'pack' -%}
-        La cure complète recommandée pour des résultats durables.
+        Cure complète 3 mois — résultats visibles et durables.
       {%- else -%}
-        Le format découverte pour tester le rituel.
+        Format découverte — 1 mois de soin.
       {%- endif -%}
     </p>
 
