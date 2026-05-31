@@ -189,9 +189,8 @@ details > summary::-webkit-details-marker { display: none; }
 }
 .h-side { width: 40px; display: flex; align-items: center; }
 .h-side--right { justify-content: flex-end; }
-.h-logo { text-align: center; }
-.h-logo__main { font-family: var(--serif); font-size: 18px; letter-spacing: 6px; color: var(--cream); display: block; line-height: 1; }
-.h-logo__sub { font-family: var(--mono); font-size: 7px; letter-spacing: 4px; color: var(--gold); display: block; margin-top: 2px; }
+.h-logo { text-align: center; display: flex; align-items: center; justify-content: center; }
+.h-logo__img { height: 44px; width: auto; object-fit: contain; }
 .h-cart { position: relative; color: var(--cream); padding: 8px; }
 .h-cart svg { display: block; }
 .cart-dot {
