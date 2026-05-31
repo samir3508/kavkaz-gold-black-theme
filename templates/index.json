@@ -247,48 +247,6 @@
         "title": "5 gestes, tous les jours"
       }
     },
-    "social": {
-      "type": "social-proof",
-      "blocks": {
-        "t1": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "text": "En 3 semaines mes pellicules ont disparu et je vois déjà des petits cheveux repousser sur les tempes. Bluffée.",
-            "name": "Inès K.",
-            "location": "Lyon"
-          }
-        },
-        "t2": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "text": "Ma chute s'est nettement calmée au bout d'un mois. L'odeur est naturelle, rien à voir avec les shampoings classiques.",
-            "name": "Karim B.",
-            "location": "Paris"
-          }
-        },
-        "t3": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "text": "Cheveux plus épais et un cuir chevelu enfin apaisé. Je suis sur le pack 3 mois, je recommande.",
-            "name": "Sofia R.",
-            "location": "Marseille"
-          }
-        }
-      },
-      "block_order": [
-        "t1",
-        "t2",
-        "t3"
-      ],
-      "settings": {
-        "ig_views": "38 000",
-        "ig_label": "vues en 7 jours",
-        "title": "Avis vérifiés"
-      }
-    },
     "cta": {
       "type": "closing-cta",
       "settings": {
@@ -307,7 +265,6 @@
     "before_after",
     "ingredients",
     "ritual",
-    "social",
     "cta"
   ]
 }
