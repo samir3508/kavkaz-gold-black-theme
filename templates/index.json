@@ -27,22 +27,22 @@
         "b1": {
           "type": "stat",
           "settings": {
-            "number": "2 sem",
+            "number": "2 semaines",
             "label": "Pellicules & démangeaisons éliminées"
           }
         },
         "b2": {
           "type": "stat",
           "settings": {
-            "number": "2 mois",
-            "label": "Chute stoppée, repousse amorcée, bulbe nettoyé & désinfecté"
+            "number": "1 mois",
+            "label": "Chute stoppée, repousse amorcée"
           }
         },
         "b3": {
           "type": "stat",
           "settings": {
             "number": "3 mois",
-            "label": "Cure complète, résultats visibles, repoussé des premiers poils"
+            "label": "Cure complète, résultats visibles"
           }
         }
       },
@@ -66,71 +66,24 @@
     "ben_list": {
       "type": "benefits-list",
       "blocks": {
-        "bn1": {
-          "type": "benefit",
-          "settings": {
-            "title": "Réactive les bulbes endormis",
-            "desc": "Repousse sur les zones nues — trous dans la barbe, plaques, ligne de cheveux qui recule."
-          }
-        },
-        "bn2": {
-          "type": "benefit",
-          "settings": {
-            "title": "Stoppe la chute",
-            "desc": "Fortifie le cheveu et le poil dès la racine pour bloquer la perte excessive, dans la douche et sur l'oreiller."
-          }
-        },
-        "bn3": {
-          "type": "benefit",
-          "settings": {
-            "title": "Accélère la croissance",
-            "desc": "Boost la vitesse de pousse naturelle grâce à une stimulation sanguine maximale du bulbe."
-          }
-        },
-        "bn4": {
-          "type": "benefit",
-          "settings": {
-            "title": "Densifie et épaissit",
-            "desc": "Le poil gaine et pousse plus noir, plus dur, plus épais. Effet de densité visible rapidement."
-          }
-        },
-        "bn5": {
-          "type": "benefit",
-          "settings": {
-            "title": "Assainit le cuir chevelu",
-            "desc": "Élimine les pellicules, stoppe les démangeaisons, régule l'excès de sébum et protège des agressions."
-          }
-        }
+        "bn1": { "type": "benefit", "settings": { "title": "Réactive les bulbes endormis", "desc": "Repousse sur les zones nues — trous dans la barbe, plaques, ligne de cheveux qui recule." } },
+        "bn2": { "type": "benefit", "settings": { "title": "Stoppe la chute", "desc": "Fortifie le cheveu et le poil dès la racine pour bloquer la perte excessive, dans la douche et sur l'oreiller." } },
+        "bn3": { "type": "benefit", "settings": { "title": "Accélère la croissance", "desc": "Boost la vitesse de pousse naturelle grâce à une stimulation sanguine maximale du bulbe." } },
+        "bn4": { "type": "benefit", "settings": { "title": "Densifie et épaissit", "desc": "Le poil gaine et pousse plus noir, plus dur, plus épais. Effet de densité visible rapidement." } },
+        "bn5": { "type": "benefit", "settings": { "title": "Assainit le cuir chevelu", "desc": "Élimine les pellicules, stoppe les démangeaisons, régule l'excès de sébum et protège des agressions." } }
       },
-      "block_order": [
-        "bn1",
-        "bn2",
-        "bn3",
-        "bn4",
-        "bn5"
-      ],
-      "settings": {
-        "eyebrow": "Ce que ça fait",
-        "title": "Les",
-        "title_em": "5 bénéfices"
-      }
+      "block_order": ["bn1","bn2","bn3","bn4","bn5"],
+      "settings": { "eyebrow": "Ce que ça fait", "title": "Les ", "title_em": "5 bénéfices" }
     },
     "before_after": {
       "type": "before-after",
       "settings": {
         "eyebrow": "Résultats réels",
-        "title": "La cure complete de 3 mois = 5 bénéfice",
+        "title": "Pellicules — avant & après",
         "before": "shopify://shop_images/IMG_0958.jpg",
-        "after": "shopify://shop_images/IMG_0961.jpg"
-      }
-    },
-    "before_after_9KHAL7": {
-      "type": "before-after",
-      "settings": {
-        "eyebrow": "Résultats réels",
-        "title": "La cure de 1 mois contre les pellicules",
-        "before": "shopify://shop_images/IMG_0981.png",
-        "after": "shopify://shop_images/IMG_0980.png"
+        "after": "shopify://shop_images/IMG_0961.jpg",
+        "label_before": "SEMAINE 0",
+        "label_after": "SEMAINE 3"
       }
     },
     "ingredients": {
@@ -253,7 +206,7 @@
       ],
       "settings": {
         "eyebrow": "14 ingrédients · 0 compromis",
-        "title": "Tout vient de la",
+        "title": "Tout vient de la ",
         "title_em": "nature",
         "subtitle": "Fabriqué par saponification à froid — les huiles ne sont jamais chauffées pour préserver 100% de la puissance de chaque actif. Séchage artisanal de 5 semaines pour un bloc ultra-concentré."
       }
@@ -312,7 +265,7 @@
     "cta": {
       "type": "closing-cta",
       "settings": {
-        "title": "Commencez votre",
+        "title": "Commencez votre ",
         "title_em": "cure",
         "code": "LIVRAISON50",
         "cta_label": "Voir les formats",
@@ -326,7 +279,6 @@
     "spotlight",
     "ben_list",
     "before_after",
-    "before_after_9KHAL7",
     "ingredients",
     "ritual",
     "cta"

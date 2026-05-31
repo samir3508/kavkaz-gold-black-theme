@@ -10,7 +10,7 @@
         {%- else -%}
           <div class="placeholder ba__img"><span>Photo avant</span></div>
         {%- endif -%}
-        <p class="ba__tag ba__tag--muted">SEMAINE 0</p>
+        <p class="ba__tag ba__tag--muted">{{ section.settings.label_before | default: 'SEMAINE 0' }}</p>
       </div>
       <div>
         {%- if section.settings.after != blank -%}
@@ -18,7 +18,7 @@
         {%- else -%}
           <div class="placeholder ba__img"><span>Photo après</span></div>
         {%- endif -%}
-        <p class="ba__tag ba__tag--gold">SEMAINE 12</p>
+        <p class="ba__tag ba__tag--gold">{{ section.settings.label_after | default: 'SEMAINE 3' }}</p>
       </div>
     </div>
   </div>
@@ -32,7 +32,9 @@
     { "type": "text", "id": "eyebrow", "label": "Label", "default": "Résultats réels" },
     { "type": "text", "id": "title", "label": "Titre", "default": "La cure de 3 mois" },
     { "type": "image_picker", "id": "before", "label": "Photo avant" },
-    { "type": "image_picker", "id": "after", "label": "Photo après" }
+    { "type": "image_picker", "id": "after", "label": "Photo après" },
+    { "type": "text", "id": "label_before", "label": "Label avant", "default": "SEMAINE 0" },
+    { "type": "text", "id": "label_after", "label": "Label après", "default": "SEMAINE 3" }
   ],
   "presets": [{ "name": "Avant / Après" }]
 }
