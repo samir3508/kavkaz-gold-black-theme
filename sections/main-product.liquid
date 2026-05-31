@@ -68,8 +68,9 @@
             <input type="radio" name="id" value="{{ v.id }}"
               {% if is_current %}checked{% endif %}
               data-price="{{ v.price | money }}"
+              data-cents="{{ v.price }}"
               data-blurb="{{ blurb }}"
-              onchange="var pr=this.dataset.price;document.getElementById('pf-price').textContent=pr;var b=document.getElementById('bb-price');if(b)b.textContent=pr;document.getElementById('pf-blurb').textContent=this.dataset.blurb;document.getElementById('pf-compare').style.display='none';document.querySelectorAll('.vcard').forEach(c=>c.classList.remove('vcard--on'));this.closest('.vcard').classList.add('vcard--on')">
+              onchange="document.getElementById('pf-blurb').textContent=this.dataset.blurb;document.getElementById('pf-compare').style.display='none';document.querySelectorAll('.vcard').forEach(c=>c.classList.remove('vcard--on'));this.closest('.vcard').classList.add('vcard--on');kgbUpd()">
             <div>
               <span class="vcard__name">{% if is_pack %}Pack 3 savonnettes{% else %}Savonnette 75g{% endif %}</span>
               <span class="vcard__dur">{% if is_pack %}Cure complète · 3 mois{% else %}1 mois de soin{% endif %}</span>
@@ -87,11 +88,11 @@
       <div class="qty-row">
         <span class="fl">QUANTITÉ</span>
         <div class="qty-ctrl">
-          <button type="button" class="qbtn" onclick="var i=document.getElementById('qin');i.value=Math.max(1,+i.value-1)">
+          <button type="button" class="qbtn" onclick="var i=document.getElementById('qin');i.value=Math.max(1,+i.value-1);kgbUpd()">
             <svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
           </button>
-          <input type="number" id="qin" name="quantity" value="1" min="1">
-          <button type="button" class="qbtn" onclick="var i=document.getElementById('qin');i.value=+i.value+1">
+          <input type="number" id="qin" name="quantity" value="1" min="1" oninput="kgbUpd()">
+          <button type="button" class="qbtn" onclick="var i=document.getElementById('qin');i.value=+i.value+1;kgbUpd()">
             <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
           </button>
         </div>
@@ -170,6 +171,19 @@
   {%- endif -%}
 
 </div>
+
+<script>
+function kgbUpd() {
+  var radio = document.querySelector('input[name="id"]:checked');
+  if (!radio) return;
+  var cents = parseInt(radio.dataset.cents, 10);
+  var qty = Math.max(1, parseInt(document.getElementById('qin').value, 10) || 1);
+  var fmt = ((cents * qty) / 100).toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('pf-price').textContent = fmt;
+  var bb = document.getElementById('bb-price');
+  if (bb) bb.textContent = fmt;
+}
+</script>
 
 {% schema %}
 {
