@@ -1,0 +1,39 @@
+<section class="section ben-list">
+  <div class="container">
+    <p class="ew">{{ section.settings.eyebrow | default: 'Ce que ça fait' }}</p>
+    <h2 class="sh">{{ section.settings.title | default: 'Les ' }}<em class="g-italic">{{ section.settings.title_em | default: '5 bénéfices' }}</em>.</h2>
+
+    <div class="ben-list__grid">
+      {%- for block in section.blocks -%}
+        <div class="ben-list__item" {{ block.shopify_attributes }}>
+          <div class="ben-list__num">{{ forloop.index }}</div>
+          <div class="ben-list__body">
+            <div class="ben-list__title">{{ block.settings.title }}</div>
+            <div class="ben-list__desc">{{ block.settings.desc }}</div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bénéfices",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Label" },
+    { "type": "text", "id": "title", "label": "Titre" },
+    { "type": "text", "id": "title_em", "label": "Mot italique or" }
+  ],
+  "blocks": [{
+    "type": "benefit",
+    "name": "Bénéfice",
+    "settings": [
+      { "type": "text", "id": "title", "label": "Titre" },
+      { "type": "textarea", "id": "desc", "label": "Description" }
+    ]
+  }],
+  "presets": [{ "name": "Bénéfices" }]
+}
+{% endschema %}

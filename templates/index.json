@@ -63,6 +63,18 @@
         "product": "savon-therapeutique-kavkaz-gold-black-75g-1"
       }
     },
+    "ben_list": {
+      "type": "benefits-list",
+      "blocks": {
+        "bn1": { "type": "benefit", "settings": { "title": "Réactive les bulbes endormis", "desc": "Repousse sur les zones nues — trous dans la barbe, plaques, ligne de cheveux qui recule." } },
+        "bn2": { "type": "benefit", "settings": { "title": "Stoppe la chute", "desc": "Fortifie le cheveu et le poil dès la racine pour bloquer la perte excessive, dans la douche et sur l'oreiller." } },
+        "bn3": { "type": "benefit", "settings": { "title": "Accélère la croissance", "desc": "Boost la vitesse de pousse naturelle grâce à une stimulation sanguine maximale du bulbe." } },
+        "bn4": { "type": "benefit", "settings": { "title": "Densifie et épaissit", "desc": "Le poil gaine et pousse plus noir, plus dur, plus épais. Effet de densité visible rapidement." } },
+        "bn5": { "type": "benefit", "settings": { "title": "Assainit le cuir chevelu", "desc": "Élimine les pellicules, stoppe les démangeaisons, régule l'excès de sébum et protège des agressions." } }
+      },
+      "block_order": ["bn1","bn2","bn3","bn4","bn5"],
+      "settings": { "eyebrow": "Ce que ça fait", "title": "Les ", "title_em": "5 bénéfices" }
+    },
     "before_after": {
       "type": "before-after",
       "settings": {
@@ -263,6 +275,7 @@
     "hero",
     "benefits",
     "spotlight",
+    "ben_list",
     "before_after",
     "ingredients",
     "ritual",

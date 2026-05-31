@@ -388,6 +388,33 @@ details > summary::-webkit-details-marker { display: none; }
   border: 1px solid rgba(201,168,76,0.18);
 }
 
+/* ── Benefits List ─────────────────────────── */
+.ben-list { background: var(--black); }
+.ben-list__grid { display: flex; flex-direction: column; gap: 0; margin-top: 36px; }
+.ben-list__item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+.ben-list__num {
+  min-width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ben-list__title { font-size: 15px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+.ben-list__desc { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
 /* ── Ingredients ───────────────────────────── */
 .ingr { background: var(--ink-2); }
 .ingr .ew { color: var(--gold); }
