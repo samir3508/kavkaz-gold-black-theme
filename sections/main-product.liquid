@@ -1,3 +1,5 @@
+{%- assign all_prods = collections['nos-produits'].products -%}
+
 <div class="pdp">
 
   <!-- Galerie -->
@@ -5,7 +7,7 @@
     {%- if product.featured_image -%}
       <img id="pf-img" src="{{ product.featured_image | image_url: width: 900 }}" alt="{{ product.featured_image.alt | escape }}" class="pdp__main-img" width="900" height="900" loading="eager">
     {%- else -%}
-      <div class="placeholder pdp__main-img" style="height:360px"><span>Photo produit</span></div>
+      <div class="placeholder pdp__main-img" style="height:340px"><span>Photo produit</span></div>
     {%- endif -%}
     {%- if product.images.size > 1 -%}
       <div class="pdp__thumbs">
@@ -20,10 +22,10 @@
     {%- endif -%}
   </div>
 
-  <!-- Infos produit -->
+  <!-- Infos -->
   <div class="pdp__info">
     <p class="pdp__eyebrow ew">Savon noir capillaire</p>
-    <h1 class="pdp__title">{{ product.title }}</h1>
+    <h1 class="pdp__title">Kavkaz Gold Black</h1>
 
     <div class="pdp__stars">
       {%- for i in (1..5) -%}
@@ -34,39 +36,52 @@
 
     <div class="pdp__price">
       {%- if product.compare_at_price > product.price -%}
-        <span class="pdp__price-was">{{ product.compare_at_price | money }}</span>
+        <span class="pdp__price-was" id="pf-compare">{{ product.compare_at_price | money }}</span>
+      {%- else -%}
+        <span class="pdp__price-was" id="pf-compare" style="display:none"></span>
       {%- endif -%}
       <span class="pdp__price-now g" id="pf-price">{{ product.price | money }}</span>
     </div>
 
-    <p class="pdp__blurb">{{ product.description | strip_html | truncate: 140 }}</p>
+    <p class="pdp__blurb" id="pf-blurb">
+      {%- if product.handle contains 'pack' -%}
+        La cure complète recommandée pour des résultats durables.
+      {%- else -%}
+        Le format découverte pour tester le rituel.
+      {%- endif -%}
+    </p>
 
     {%- form 'product', product, id: 'product-form' -%}
-      <input type="hidden" name="id" id="pf-variant" value="{{ product.selected_or_first_available_variant.id }}">
 
-      <!-- Variants -->
-      {%- if product.variants.size > 1 -%}
-        <span class="fl">CHOISIR LE FORMAT</span>
-        <div class="variants">
-          {%- for v in product.variants -%}
-            <label class="vcard {% if forloop.first %}vcard--on{% endif %}">
-              <input type="radio" name="variant_radio" value="{{ v.id }}" {% if forloop.first %}checked{% endif %}
-                onchange="var p='{{ v.price | money }}';document.getElementById('pf-variant').value=this.value;document.getElementById('pf-price').textContent=p;var b=document.getElementById('bb-price');if(b)b.textContent=p;document.querySelectorAll('.vcard').forEach(c=>c.classList.remove('vcard--on'));this.closest('.vcard').classList.add('vcard--on')">
-              <div>
-                <span class="vcard__name">{{ v.title }}</span>
-                <span class="vcard__dur">{% if v.title contains '3' or v.title contains 'Pack' %}Cure complète · 3 mois{% else %}1 mois de soin{% endif %}</span>
-              </div>
-              <div class="vcard__right">
-                <span class="vcard__price">{{ v.price | money }}</span>
-                {%- if v.compare_at_price > v.price -%}
-                  <span class="vcard__badge">Le plus choisi</span>
-                {%- endif -%}
-                <span class="vcard__radio"></span>
-              </div>
-            </label>
-          {%- endfor -%}
-        </div>
-      {%- endif -%}
+      <!-- Sélecteur de format — les 2 produits -->
+      <span class="fl">CHOISIR LE FORMAT</span>
+      <div class="variants">
+        {%- for p in all_prods -%}
+          {%- assign v = p.variants.first -%}
+          {%- assign is_current = false -%}
+          {%- if p.handle == product.handle -%}{%- assign is_current = true -%}{%- endif -%}
+          {%- assign is_pack = false -%}
+          {%- if p.handle contains 'pack' -%}{%- assign is_pack = true -%}{%- endif -%}
+          {%- assign blurb = 'Le format découverte pour tester le rituel.' -%}
+          {%- if is_pack -%}{%- assign blurb = 'La cure complète recommandée pour des résultats durables.' -%}{%- endif -%}
+          <label class="vcard {% if is_current %}vcard--on{% endif %}">
+            <input type="radio" name="id" value="{{ v.id }}"
+              {% if is_current %}checked{% endif %}
+              data-price="{{ v.price | money }}"
+              data-blurb="{{ blurb }}"
+              onchange="var pr=this.dataset.price;document.getElementById('pf-price').textContent=pr;var b=document.getElementById('bb-price');if(b)b.textContent=pr;document.getElementById('pf-blurb').textContent=this.dataset.blurb;document.getElementById('pf-compare').style.display='none';document.querySelectorAll('.vcard').forEach(c=>c.classList.remove('vcard--on'));this.closest('.vcard').classList.add('vcard--on')">
+            <div>
+              <span class="vcard__name">{% if is_pack %}Pack 3 savonnettes{% else %}Savonnette 75g{% endif %}</span>
+              <span class="vcard__dur">{% if is_pack %}Cure complète · 3 mois{% else %}1 mois de soin{% endif %}</span>
+            </div>
+            <div class="vcard__right">
+              <span class="vcard__price">{{ v.price | money }}</span>
+              {%- if is_pack -%}<span class="vcard__badge">Le plus choisi</span>{%- endif -%}
+              <span class="vcard__radio"></span>
+            </div>
+          </label>
+        {%- endfor -%}
+      </div>
 
       <!-- Quantité -->
       <div class="qty-row">
@@ -141,11 +156,11 @@
     {%- endform -%}
   </div>
 
-  <!-- Barre CTA fixe (mobile) -->
+  <!-- Barre fixe mobile -->
   {%- if product.available -%}
     <div class="stickybar" id="bottom-bar">
       <div class="stickybar__info">
-        <div class="stickybar__name">{{ product.title | truncate: 28 }}</div>
+        <div class="stickybar__name">Kavkaz Gold Black</div>
         <div class="stickybar__price g" id="bb-price">{{ product.price | money }}</div>
       </div>
       <button class="btn btn-gold stickybar__btn" onclick="document.getElementById('product-form').querySelector('[name=add]').click()">
