@@ -4,22 +4,21 @@
       <div class="cart-empty">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M3 4h2l2.2 11.2a1.5 1.5 0 001.5 1.2h8.6a1.5 1.5 0 001.5-1.2L20.5 8H6.2" stroke="rgba(249,245,240,0.3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="20" r="1.4" fill="rgba(249,245,240,0.3)"/><circle cx="17.5" cy="20" r="1.4" fill="rgba(249,245,240,0.3)"/></svg>
         <p>Votre panier est vide.</p>
-        <a href="/collections/nos-produits" class="btn btn-gold btn-lg" style="margin-top:20px">Découvrir le soin</a>
+        <a href="/products/savon-therapeutique-kavkaz-gold-black-75g-1" class="btn btn-gold btn-lg" style="margin-top:20px">Découvrir le soin</a>
       </div>
     {%- else -%}
-      {%- assign subtotal = cart.total_price | divided_by: 100.0 -%}
-      {%- assign free_threshold = 50 -%}
-      {%- assign pct = subtotal | divided_by: free_threshold | times: 100 | at_most: 100 -%}
+      {%- assign free_cents = 5000 -%}
+      {%- assign pct = cart.total_price | divided_by: 5000.0 | times: 100 | at_most: 100 | round -%}
 
       <!-- Barre livraison -->
       <div class="ship-bar">
         <div class="ship-bar__msg">
-          {%- if subtotal >= free_threshold -%}
+          {%- if cart.total_price >= free_cents -%}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z" stroke="#C9A84C" stroke-width="1.4" stroke-linejoin="round"/></svg>
             <strong style="color:#C9A84C">Livraison offerte</strong>&nbsp;débloquée 🎉
           {%- else -%}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
-            Plus que <strong>{{ free_threshold | minus: subtotal | money }}</strong> pour la livraison offerte
+            Plus que <strong>{{ free_cents | minus: cart.total_price | money }}</strong> pour la livraison offerte
           {%- endif -%}
         </div>
         <div class="ship-bar__track">
@@ -37,8 +36,14 @@
                 {%- endif -%}
               </div>
               <div class="citem__body">
-                <div class="citem__name">{{ item.product.title }}</div>
-                <div class="citem__var">{{ item.variant.title }}</div>
+                <div class="citem__name">Kavkaz Gold Black</div>
+                <div class="citem__var">
+                  {%- if item.product.handle contains 'pack' -%}
+                    Pack 3 savonnettes · Cure 3 mois
+                  {%- else -%}
+                    Savonnette 75g · 1 mois de soin
+                  {%- endif -%}
+                </div>
                 <div class="citem__price g">{{ item.line_price | money }}</div>
                 <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="citem__rm">Supprimer ×</a>
               </div>
@@ -49,10 +54,12 @@
         <!-- Code promo -->
         <div class="promo-row">
           {%- if cart.cart_level_discount_applications.size == 0 -%}
-            <input type="text" name="discount" placeholder="Code promo" value="LIVRAISON50" class="promo-in">
+            <input type="text" name="discount" placeholder="Code promo" value="" class="promo-in">
             <button type="submit" name="update" class="btn btn-ghost">OK</button>
           {%- else -%}
-            <span style="color:#C9A84C">✓ Code appliqué</span>
+            {%- for discount in cart.cart_level_discount_applications -%}
+              <span style="color:#C9A84C;font-size:13px">✓ {{ discount.title }}</span>
+            {%- endfor -%}
           {%- endif -%}
         </div>
 
@@ -64,23 +71,35 @@
           </div>
           <div class="cart-recap__row">
             <span>Livraison</span>
-            <span>{% if subtotal >= free_threshold %}<span style="color:#C9A84C">Offerte</span>{% else %}5,00 €{% endif %}</span>
+            <span>
+              {%- if cart.total_price >= free_cents -%}
+                <span style="color:#C9A84C">Offerte</span>
+              {%- else -%}
+                5,00 €
+              {%- endif -%}
+            </span>
           </div>
           <div class="cart-recap__row cart-recap__total">
             <span>Total</span>
-            <span class="g" style="font-family:var(--serif);font-size:26px">{% if subtotal >= free_threshold %}{{ cart.total_price | money }}{% else %}{{ cart.total_price | plus: 500 | money }}{% endif %}</span>
+            <span class="g" style="font-family:var(--serif);font-size:26px">
+              {%- if cart.total_price >= free_cents -%}
+                {{ cart.total_price | money }}
+              {%- else -%}
+                {{ cart.total_price | plus: 500 | money }}
+              {%- endif -%}
+            </span>
           </div>
         </div>
 
         <div class="cart-actions">
           <button type="submit" name="checkout" class="btn btn-gold btn-full btn-lg">Passer la commande</button>
-          <a href="/collections/nos-produits" class="cart-back">Continuer mes achats</a>
+          <a href="/products/savon-therapeutique-kavkaz-gold-black-75g-1" class="cart-back">Continuer mes achats</a>
         </div>
 
         <div class="trust-row">
           <span>🔒 Paiement sécurisé</span>
           <span>📦 Mondial Relay</span>
-          <span>🌿 Naturel</span>
+          <span>🌿 14 actifs naturels</span>
         </div>
 
       {%- endform -%}
