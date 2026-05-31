@@ -27,22 +27,22 @@
         "b1": {
           "type": "stat",
           "settings": {
-            "number": "2 semaines",
+            "number": "2 sem",
             "label": "Pellicules & démangeaisons éliminées"
           }
         },
         "b2": {
           "type": "stat",
           "settings": {
-            "number": "1 mois",
-            "label": "Chute stoppée, repousse amorcée"
+            "number": "2 mois",
+            "label": "Chute stoppée, repousse amorcée, bulbe nettoyé & désinfecté"
           }
         },
         "b3": {
           "type": "stat",
           "settings": {
             "number": "3 mois",
-            "label": "Cure complète, résultats visibles"
+            "label": "Cure complète, résultats visibles, repoussé des premiers poils"
           }
         }
       },
