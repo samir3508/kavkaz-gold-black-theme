@@ -128,7 +128,7 @@
       "type": "before-after",
       "settings": {
         "eyebrow": "Résultats réels",
-        "title": "La cure de 1 mois contre les pellicules = 2 bénéfice",
+        "title": "La cure de 1 mois contre les pellicules",
         "before": "shopify://shop_images/IMG_0981.png",
         "after": "shopify://shop_images/IMG_0980.png"
       }
