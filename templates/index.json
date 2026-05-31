@@ -15,10 +15,10 @@
         "eyebrow": "Recette ancestrale du Caucase",
         "title_line1": "Stoppe la chute,",
         "title_line2": "repousse",
-        "subtitle": "Le savon noir capillaire thérapeutique au\n14 ingrédients naturels, des résultats visibles on moyenne entre 2 à 3 semaine.",
+        "subtitle": "Le savon noir capillaire thérapeutique — 14 ingrédients naturels, des résultats visibles dès la 2ᵉ semaine.",
         "image": "shopify://shop_images/product-ingredients_e83cecf9-c491-4445-bd7a-f6293707bd83.jpg",
         "cta_label": "Découvrir le soin",
-        "cta_url": "shopify://collections/all"
+        "cta_url": "/collections/nos-produits"
       }
     },
     "benefits": {
@@ -27,22 +27,22 @@
         "b1": {
           "type": "stat",
           "settings": {
-            "number": "3 sem",
-            "label": "Élimination des pellicules a 99%"
+            "number": "3 semaine",
+            "label": "Élimination de pellicule a 99%"
           }
         },
         "stat_ebK89E": {
           "type": "stat",
           "settings": {
             "number": "2 mois",
-            "label": "Chute des cheveux stoppée"
+            "label": "Chute stoppée dès le 2 mois"
           }
         },
         "b2": {
           "type": "stat",
           "settings": {
             "number": "3 mois",
-            "label": "Première repousse des poils visible"
+            "label": "Première repousse visible"
           }
         }
       },
@@ -58,8 +58,8 @@
       "settings": {
         "eyebrow": "Le produit",
         "title": "La savonnette Kavkaz",
-        "subtitle": "Pain 75g = 1 mois d'utilisations",
-        "image": "shopify://shop_images/2c4b1002-9a21-4385-8f28-6954abc6dd71.png",
+        "subtitle": "pain rond, 75g",
+        "image": "shopify://shop_images/product-solo_56564a6b-ecdb-45e1-a768-d9ce4af455e1.jpg",
         "product": "savon-therapeutique-kavkaz-gold-black-75g-1"
       }
     },
@@ -67,18 +67,9 @@
       "type": "before-after",
       "settings": {
         "eyebrow": "Résultats réels",
-        "title": "La cure de 3 mois nettoyage complet du cuir chevelu",
+        "title": "La cure de 3 mois",
         "before": "shopify://shop_images/IMG_0958.jpg",
         "after": "shopify://shop_images/IMG_0961.jpg"
-      }
-    },
-    "before_after_bK4pNF": {
-      "type": "before-after",
-      "settings": {
-        "eyebrow": "Résultats réels",
-        "title": "La cure de 1 mois contre les pellicules",
-        "before": "shopify://shop_images/IMG_0981.png",
-        "after": "shopify://shop_images/IMG_0980.png"
       }
     },
     "ingredients": {
@@ -211,29 +202,36 @@
         "r1": {
           "type": "step",
           "settings": {
-            "title": "Faire mousser",
-            "desc": "Frottez la savonnette entre vos mains humides jusqu'à obtenir une mousse onctueuse."
+            "title": "Mouiller",
+            "desc": "Mouillez abondamment vos cheveux."
           }
         },
         "r2": {
           "type": "step",
           "settings": {
-            "title": "Masser le cuir chevelu",
-            "desc": "Appliquez et massez 2 minutes pour activer la microcirculation."
+            "title": "Faire mousser",
+            "desc": "Frottez le savon directement sur le cuir chevelu pour créer une mousse onctueuse."
           }
         },
         "r3": {
           "type": "step",
           "settings": {
-            "title": "Laisser poser",
-            "desc": "Laissez agir 3 à 5 minutes, puis rincez à l'eau tiède."
+            "title": "Masser le cuir chevelu",
+            "desc": "Massez doucement pendant 2 minutes pour activer la microcirculation."
           }
         },
         "r4": {
           "type": "step",
           "settings": {
-            "title": "Répéter 3× / semaine",
-            "desc": "Pour une cure complète de 3 mois, résultats dès la 2ᵉ semaine."
+            "title": "Laisser poser",
+            "desc": "Laissez la mousse agir 5 minutes."
+          }
+        },
+        "r5": {
+          "type": "step",
+          "settings": {
+            "title": "Rincer",
+            "desc": "Rincez abondamment à l'eau tiède."
           }
         }
       },
@@ -241,11 +239,12 @@
         "r1",
         "r2",
         "r3",
-        "r4"
+        "r4",
+        "r5"
       ],
       "settings": {
         "eyebrow": "Le rituel",
-        "title": "4 gestes, 3 fois par semaine"
+        "title": "5 gestes, tous les jours"
       }
     },
     "social": {
@@ -306,7 +305,6 @@
     "benefits",
     "spotlight",
     "before_after",
-    "before_after_bK4pNF",
     "ingredients",
     "ritual",
     "social",
