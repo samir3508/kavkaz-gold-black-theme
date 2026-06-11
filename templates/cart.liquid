@@ -71,13 +71,7 @@
           </div>
           <div class="cart-recap__row cart-recap__total">
             <span>Total</span>
-            <span class="g" style="font-family:var(--serif);font-size:26px">
-              {%- if cart.total_price >= free_cents -%}
-                {{ cart.total_price | money }}
-              {%- else -%}
-                {{ cart.total_price | plus: 500 | money }}
-              {%- endif -%}
-            </span>
+            <span class="g" style="font-family:var(--serif);font-size:26px">{{ cart.total_price | money }}</span>
           </div>
         </div>
 
