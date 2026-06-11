@@ -69,16 +69,6 @@
             <span>Sous-total</span>
             <span>{{ cart.total_price | money }}</span>
           </div>
-          <div class="cart-recap__row">
-            <span>Livraison</span>
-            <span>
-              {%- if cart.total_price >= free_cents -%}
-                <span style="color:#C9A84C">Offerte</span>
-              {%- else -%}
-                5,00 €
-              {%- endif -%}
-            </span>
-          </div>
           <div class="cart-recap__row cart-recap__total">
             <span>Total</span>
             <span class="g" style="font-family:var(--serif);font-size:26px">
