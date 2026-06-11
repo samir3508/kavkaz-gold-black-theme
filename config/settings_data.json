@@ -18,8 +18,8 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "text": "LIVRAISON OFFERTE DÈS 50€",
-          "code": "LIVRAISON50"
+          "text": "LIVRAISON OFFERTE DÈS 70€",
+          "code": "LIVRAISON70"
         }
       },
       "header": {
