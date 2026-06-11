@@ -4,7 +4,7 @@
       {{ section.settings.title | default: 'Commencez votre ' }}<em class="g-italic">{{ section.settings.title_em | default: 'cure' }}</em>
     </h2>
     <p class="closing__sub">
-      Livraison offerte dès 50€ avec le code <span class="closing__code">{{ section.settings.code | default: 'LIVRAISON50' }}</span>.
+      Livraison offerte dès 70€ avec le code <span class="closing__code">{{ section.settings.code | default: 'LIVRAISON70' }}</span>.
     </p>
     <a href="{{ section.settings.cta_url | default: '/collections/nos-produits' }}" class="btn btn-gold btn-lg">
       {{ section.settings.cta_label | default: 'Voir les formats' }}
@@ -19,7 +19,7 @@
   "settings": [
     { "type": "text", "id": "title", "label": "Titre", "default": "Commencez votre " },
     { "type": "text", "id": "title_em", "label": "Mot or italique", "default": "cure" },
-    { "type": "text", "id": "code", "label": "Code promo", "default": "LIVRAISON50" },
+    { "type": "text", "id": "code", "label": "Code promo", "default": "LIVRAISON70" },
     { "type": "text", "id": "cta_label", "label": "Bouton", "default": "Voir les formats" },
     { "type": "url", "id": "cta_url", "label": "Lien bouton" }
   ],

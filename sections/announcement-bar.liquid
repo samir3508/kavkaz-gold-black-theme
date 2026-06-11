@@ -1,13 +1,13 @@
 <div class="ann-bar">
-  ✦&nbsp;&nbsp;{{ section.settings.text | default: 'LIVRAISON OFFERTE DÈS 50€' }}&nbsp;&nbsp;·&nbsp;&nbsp;CODE&nbsp;<strong>{{ section.settings.code | default: 'LIVRAISON50' }}</strong>&nbsp;&nbsp;✦
+  ✦&nbsp;&nbsp;{{ section.settings.text | default: 'LIVRAISON OFFERTE DÈS 70€' }}&nbsp;&nbsp;·&nbsp;&nbsp;CODE&nbsp;<strong>{{ section.settings.code | default: 'LIVRAISON70' }}</strong>&nbsp;&nbsp;✦
 </div>
 
 {% schema %}
 {
   "name": "Bandeau promo",
   "settings": [
-    { "type": "text", "id": "text", "label": "Texte", "default": "LIVRAISON OFFERTE DÈS 50€" },
-    { "type": "text", "id": "code", "label": "Code promo", "default": "LIVRAISON50" }
+    { "type": "text", "id": "text", "label": "Texte", "default": "LIVRAISON OFFERTE DÈS 70€" },
+    { "type": "text", "id": "code", "label": "Code promo", "default": "LIVRAISON70" }
   ]
 }
 {% endschema %}
