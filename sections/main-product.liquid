@@ -71,7 +71,7 @@
               data-img="{{ p.featured_image | image_url: width: 900 }}"
               onchange="document.getElementById('pf-blurb').textContent=this.dataset.blurb;document.getElementById('pf-compare').style.display='none';document.querySelectorAll('.vcard').forEach(c=>c.classList.remove('vcard--on'));this.closest('.vcard').classList.add('vcard--on');kgbUpd()">
             <div>
-              <span class="vcard__name">{% if is_pack %}Pack 3 savonnettes{% else %}Savonnette 75g{% endif %}</span>
+              <span class="vcard__name">{% if is_pack %}Pack 3 savonnettes{% else %}Savonnette 80g{% endif %}</span>
               <span class="vcard__dur">{% if is_pack %}Chute · Repousse · Pellicules · Alopécie{% else %}Pellicules & démangeaisons uniquement{% endif %}</span>
             </div>
             <div class="vcard__right">
