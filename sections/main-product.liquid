@@ -24,9 +24,18 @@
 
   <!-- Infos -->
   <div class="pdp__info">
-    <p class="pdp__eyebrow ew">Savon noir capillaire</p>
-    <h1 class="pdp__title">Kavkaz Gold Black</h1>
+    {%- assign is_soap = false -%}
+    {%- for p in collections['nos-produits'].products -%}
+      {%- if p.handle == product.handle -%}{%- assign is_soap = true -%}{%- endif -%}
+    {%- endfor -%}
 
+    {%- if is_soap -%}
+      <p class="pdp__eyebrow ew">Savon noir capillaire</p>
+      <h1 class="pdp__title">Kavkaz Gold Black</h1>
+    {%- else -%}
+      <p class="pdp__eyebrow ew">Accessoire</p>
+      <h1 class="pdp__title">{{ product.title }}</h1>
+    {%- endif -%}
 
     <div class="pdp__price">
       {%- if product.compare_at_price > product.price -%}
@@ -37,17 +46,20 @@
       <span class="pdp__price-now g" id="pf-price">{{ product.price | money }}</span>
     </div>
 
-    <p class="pdp__desc">Tu perds tes cheveux, ta barbe est trouée, tu as des pellicules persistantes ou ton cuir chevelu démange ? Les shampoings classiques masquent le problème sans jamais le traiter.</p>
-    <p class="pdp__desc">Le <strong>Protocole Kavkaz</strong> agit à la racine — littéralement. Formulé à partir de <strong>14 actifs végétaux du Caucase</strong>, il réactive les bulbes endormis, stoppe la chute et relance la repousse. Zéro sulfate, zéro parabène, zéro silicone.</p>
-    <p class="pdp__desc">Pour <strong>femmes et hommes</strong> — pellicules, chute de cheveux, alopécie, barbe trouée, cuir chevelu irrité.</p>
-
-    <p class="pdp__blurb" id="pf-blurb">
-      {%- if product.handle contains 'pack' -%}
-        Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse.
-      {%- else -%}
-        Pour pellicules & démangeaisons — résultats dès 2 semaines.
-      {%- endif -%}
-    </p>
+    {%- if is_soap -%}
+      <p class="pdp__desc">Tu perds tes cheveux, ta barbe est trouée, tu as des pellicules persistantes ou ton cuir chevelu démange ? Les shampoings classiques masquent le problème sans jamais le traiter.</p>
+      <p class="pdp__desc">Le <strong>Protocole Kavkaz</strong> agit à la racine — littéralement. Formulé à partir de <strong>14 actifs végétaux du Caucase</strong>, il réactive les bulbes endormis, stoppe la chute et relance la repousse. Zéro sulfate, zéro parabène, zéro silicone.</p>
+      <p class="pdp__desc">Pour <strong>femmes et hommes</strong> — pellicules, chute de cheveux, alopécie, barbe trouée, cuir chevelu irrité.</p>
+      <p class="pdp__blurb" id="pf-blurb">
+        {%- if product.handle contains 'pack' -%}
+          Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse.
+        {%- else -%}
+          Pour pellicules & démangeaisons — résultats dès 2 semaines.
+        {%- endif -%}
+      </p>
+    {%- else -%}
+      {{ product.description }}
+    {%- endif -%}
 
     {%- form 'product', product, id: 'product-form' -%}
 
