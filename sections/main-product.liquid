@@ -96,6 +96,31 @@
         </div>
       </div>
 
+      <!-- Upsell Brosse -->
+      {%- assign brosse = all_products['brosse-massage-cuir-chevelu-kavkaz'] -%}
+      {%- if brosse != blank and brosse.available -%}
+      <div class="upsell-wrap">
+        <p class="fl" style="margin-bottom:10px">COMPLÉTEZ VOTRE ROUTINE</p>
+        <label class="upsell-card" for="brush-cb"
+          data-vid="{{ brosse.variants.first.id }}"
+          data-cents="{{ brosse.variants.first.price }}">
+          <input type="checkbox" id="brush-cb" style="display:none" onchange="kgbUpd()">
+          {%- if brosse.featured_image -%}
+            <img src="{{ brosse.featured_image | image_url: width: 160 }}" alt="Brosse" class="upsell-card__img">
+          {%- endif -%}
+          <div class="upsell-card__body">
+            <span class="upsell-card__tag">RECOMMANDÉ</span>
+            <span class="upsell-card__name">Brosse Massage Cuir Chevelu</span>
+            <span class="upsell-card__sub">Stimule la microcirculation · amplifie les résultats du savon</span>
+          </div>
+          <div class="upsell-card__right">
+            <span class="upsell-card__price g">+ {{ brosse.variants.first.price | money }}</span>
+            <span class="upsell-card__box"></span>
+          </div>
+        </label>
+      </div>
+      {%- endif -%}
+
       <!-- Quantité -->
       <div class="qty-row">
         <span class="fl">QUANTITÉ</span>
@@ -207,19 +232,71 @@
 
 </div>
 
+<style>
+.upsell-wrap{margin:24px 0}
+.upsell-card{display:flex;align-items:center;gap:14px;border:1.5px solid var(--border);border-radius:8px;padding:14px;cursor:pointer;transition:border-color .2s;background:var(--surface)}
+.upsell-card:has(#brush-cb:checked){border-color:var(--gold)}
+.upsell-card__img{width:64px;height:64px;object-fit:cover;border-radius:6px;flex-shrink:0}
+.upsell-card__body{flex:1;min-width:0}
+.upsell-card__tag{display:block;font-size:9px;letter-spacing:1.5px;color:var(--gold);margin-bottom:4px;font-family:var(--mono)}
+.upsell-card__name{display:block;font-size:14px;font-weight:600;color:var(--fg);margin-bottom:3px}
+.upsell-card__sub{display:block;font-size:12px;color:var(--muted)}
+.upsell-card__right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex-shrink:0}
+.upsell-card__price{font-size:15px;font-weight:700}
+.upsell-card__box{width:20px;height:20px;border:1.5px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.upsell-card:has(#brush-cb:checked) .upsell-card__box{background:var(--gold);border-color:var(--gold)}
+.upsell-card:has(#brush-cb:checked) .upsell-card__box::after{content:'';width:10px;height:6px;border-left:2px solid #000;border-bottom:2px solid #000;transform:rotate(-45deg) translateY(-2px);display:block}
+</style>
+
 <script>
 function kgbUpd() {
   var radio = document.querySelector('input[name="id"]:checked');
   if (!radio) return;
   var cents = parseInt(radio.dataset.cents, 10);
   var qty = Math.max(1, parseInt(document.getElementById('qin').value, 10) || 1);
-  var fmt = ((cents * qty) / 100).toFixed(2).replace('.', ',') + ' €';
+  var total = cents * qty;
+  var brushCb = document.getElementById('brush-cb');
+  var brushCard = document.querySelector('.upsell-card[data-cents]');
+  if (brushCb && brushCb.checked && brushCard) {
+    total += parseInt(brushCard.dataset.cents, 10);
+  }
+  var fmt = (total / 100).toFixed(2).replace('.', ',') + ' €';
   document.getElementById('pf-price').textContent = fmt;
   var bb = document.getElementById('bb-price');
   if (bb) bb.textContent = fmt;
   var img = document.getElementById('pf-img');
   if (img && radio.dataset.img) img.src = radio.dataset.img;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('product-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    var brushCb = document.getElementById('brush-cb');
+    var brushCard = document.querySelector('.upsell-card[data-vid]');
+    if (!brushCb || !brushCb.checked || !brushCard) return;
+    e.preventDefault();
+    var mainVid = parseInt(document.querySelector('input[name="id"]:checked').value);
+    var qty = Math.max(1, parseInt(document.getElementById('qin').value) || 1);
+    var brushVid = parseInt(brushCard.dataset.vid);
+    var btn = document.getElementById('main-atc');
+    btn.disabled = true;
+    btn.textContent = 'Ajout en cours…';
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: [
+        { id: mainVid, quantity: qty },
+        { id: brushVid, quantity: 1 }
+      ]})
+    }).then(function() {
+      window.location.href = '/cart';
+    }).catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Ajouter au panier';
+    });
+  });
+});
 </script>
 
 {% schema %}
