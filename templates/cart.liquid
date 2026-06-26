@@ -36,12 +36,16 @@
                 {%- endif -%}
               </div>
               <div class="citem__body">
-                <div class="citem__name">Kavkaz Gold Black</div>
+                <div class="citem__name">{{ item.product.title }}</div>
                 <div class="citem__var">
-                  {%- if item.product.handle contains 'pack' -%}
+                  {%- if item.variant.title != 'Default Title' -%}
+                    {{ item.variant.title }}
+                  {%- elsif item.product.handle contains 'pack' -%}
                     Pack 3 savonnettes · Cure 3 mois
+                  {%- elsif item.product.handle contains 'brosse' -%}
+                    Accessoire · Massage cuir chevelu
                   {%- else -%}
-                    Savonnette 75g · 1 mois de soin
+                    Savonnette 80g · 1 mois de soin
                   {%- endif -%}
                 </div>
                 <div class="citem__price g">{{ item.line_price | money }}</div>
