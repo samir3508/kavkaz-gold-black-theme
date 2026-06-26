@@ -373,6 +373,15 @@
         "title_em": "fréquentes"
       }
     },
+    "spotlight_brosse": {
+      "type": "product-spotlight",
+      "settings": {
+        "eyebrow": "L'accessoire",
+        "title": "Brosse Massage Cuir Chevelu",
+        "subtitle": "Amplifie les résultats du Savon Kavkaz",
+        "product": "brosse-massage-cuir-chevelu-kavkaz"
+      }
+    },
     "cta": {
       "type": "closing-cta",
       "settings": {
@@ -393,6 +402,7 @@
     "before_after",
     "ingredients",
     "ritual",
+    "spotlight_brosse",
     "faq",
     "cta"
   ]
