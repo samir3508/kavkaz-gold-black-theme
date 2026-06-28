@@ -37,15 +37,6 @@
         "type": "shopify://apps/amp-back-in-stock/blocks/app-embed/bfa6a8c4-24e2-411a-9396-e35031b33f34",
         "disabled": false,
         "settings": {}
-      },
-      "3952356182629730020": {
-        "type": "shopify://apps/qstomy/blocks/snippet/e6eee915-35f3-4263-ad38-6d12d36a17b6",
-        "disabled": false,
-        "settings": {
-          "hideWidgetSelector": "",
-          "initMode": "lazy",
-          "lazyTriggerSelector": ""
-        }
       }
     }
   }

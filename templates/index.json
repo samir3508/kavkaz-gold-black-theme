@@ -137,6 +137,62 @@
         "label_after": "SEMAINE 3"
       }
     },
+    "social_proof": {
+      "type": "social-proof",
+      "blocks": {
+        "rv1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "Depuis que je laisse agir 15-20min je n'ai plus de pellicules ! Ça mousse super bien, ça sent bon. J'ai commandé 3 mois, j'attends les autres mois pour te faire un retour en photo.",
+            "name": "Sofiane A.",
+            "location": "Paris"
+          }
+        },
+        "rv2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "MashaAllah le produit fonctionne très bien, je compte l'utiliser tous les jours. T'as une mine d'or entre les mains.",
+            "name": "Youssef M.",
+            "location": "Lyon"
+          }
+        },
+        "rv3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "Mes cheveux cassent moins, le cuir chevelu est déjà en meilleure santé. La brillance je la sens direct. Je suis content d'avoir commandé 3 savonnettes.",
+            "name": "Karim R.",
+            "location": "Marseille"
+          }
+        },
+        "rv4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "J'étais sceptique parce que je suis blond mais ça marche très bien. Meilleure couleur, moins de démangeaisons, gain en volume. Meilleure alternative aux shampoings que j'ai testés.",
+            "name": "Thomas L.",
+            "location": "Bordeaux"
+          }
+        },
+        "rv5": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "Même pas un mois d'utilisation et grosse amélioration sur les pellicules. Mes cheveux sont plus forts, plus épais. J'ai arrêté tous les autres shampoings.",
+            "name": "Mehdi S.",
+            "location": "Toulouse"
+          }
+        }
+      },
+      "block_order": ["rv1", "rv2", "rv3", "rv4", "rv5"],
+      "settings": {
+        "ig_views": "38 000",
+        "ig_label": "vues organiques en 7 jours",
+        "title": "Ils ont essayé. Ils reviennent."
+      }
+    },
     "ingredients": {
       "type": "ingredients",
       "blocks": {
@@ -400,6 +456,7 @@
     "ben_list",
     "before_after_cure",
     "before_after",
+    "social_proof",
     "ingredients",
     "ritual",
     "spotlight_brosse",
