@@ -152,16 +152,13 @@ details > summary::-webkit-details-marker { display: none; }
 .ann-bar {
   background: rgba(201,168,76,0.06);
   border-bottom: 1px solid rgba(201,168,76,0.12);
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 36px;
+  overflow: hidden;
+  position: relative;
   font-family: var(--mono);
   font-size: 9px;
   letter-spacing: 2px;
   color: rgba(201,168,76,0.8);
-  overflow: hidden;
-  white-space: nowrap;
 }
 .ann-bar strong { color: var(--gold-lite); letter-spacing: 1px; }
 

@@ -1,9 +1,8 @@
 <style>
-.ann-bar { overflow: hidden; position: relative; height: 36px; }
 .ann-bar__track {
   display: flex;
   flex-direction: column;
-  animation: annSlide 6s infinite;
+  animation: annSlide 7s ease-in-out infinite;
 }
 .ann-bar__msg {
   height: 36px;
@@ -11,10 +10,11 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 @keyframes annSlide {
-  0%,40%  { transform: translateY(0); }
-  50%,90% { transform: translateY(-36px); }
+  0%,42%  { transform: translateY(0); }
+  50%,92% { transform: translateY(-36px); }
   100%    { transform: translateY(0); }
 }
 </style>
@@ -25,7 +25,7 @@
       ✦&nbsp;&nbsp;{{ section.settings.text | default: 'LIVRAISON OFFERTE DÈS 70€' }}&nbsp;&nbsp;·&nbsp;&nbsp;CODE&nbsp;<strong>{{ section.settings.code | default: 'LIVRAISON70' }}</strong>&nbsp;&nbsp;✦
     </div>
     <div class="ann-bar__msg">
-      ✦&nbsp;&nbsp;{{ section.settings.text2 | default: '-10% SUR VOTRE 1ÈRE COMMANDE' }}&nbsp;&nbsp;·&nbsp;&nbsp;CODE&nbsp;<strong>{{ section.settings.code2 | default: 'BIENVENUE10' }}</strong>&nbsp;&nbsp;✦
+      ✦&nbsp;&nbsp;{{ section.settings.text2 | default: '-10% SUR VOTRE 1ÈRE COMMANDE' }}&nbsp;&nbsp;·&nbsp;&nbsp;CODE&nbsp;<strong>{{ section.settings.code2 | default: 'KAVKAZ10' }}</strong>&nbsp;&nbsp;✦
     </div>
   </div>
 </div>
@@ -37,7 +37,7 @@
     { "type": "text", "id": "text", "label": "Message 1", "default": "LIVRAISON OFFERTE DÈS 70€" },
     { "type": "text", "id": "code", "label": "Code 1", "default": "LIVRAISON70" },
     { "type": "text", "id": "text2", "label": "Message 2", "default": "-10% SUR VOTRE 1ÈRE COMMANDE" },
-    { "type": "text", "id": "code2", "label": "Code 2", "default": "BIENVENUE10" }
+    { "type": "text", "id": "code2", "label": "Code 2", "default": "KAVKAZ10" }
   ]
 }
 {% endschema %}
