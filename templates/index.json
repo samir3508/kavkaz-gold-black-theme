@@ -184,12 +184,26 @@
             "name": "Mehdi S.",
             "location": "Toulouse"
           }
+        },
+        "rv6": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "Après presque un mois d'utilisation : disparition totale des pellicules, cheveux plus beaux, plus sains et légèrement plus foncés. L'impression qu'ils sont plus forts et plus volumineux. Je continue la cure 3 mois mais je suis déjà très content. Merci pour ce produit naturel !",
+            "name": "Amine K.",
+            "location": "Paris"
+          }
         }
       },
-      "block_order": ["rv1", "rv2", "rv3", "rv4", "rv5"],
+      "block_order": [
+        "rv1",
+        "rv2",
+        "rv3",
+        "rv4",
+        "rv5",
+        "rv6"
+      ],
       "settings": {
-        "ig_views": "38 000",
-        "ig_label": "vues organiques en 7 jours",
         "title": "Ils ont essayé. Ils reviennent."
       }
     },
