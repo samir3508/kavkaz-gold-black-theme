@@ -1,13 +1,43 @@
+<style>
+.ann-bar { overflow: hidden; position: relative; height: 36px; }
+.ann-bar__track {
+  display: flex;
+  flex-direction: column;
+  animation: annSlide 6s infinite;
+}
+.ann-bar__msg {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+@keyframes annSlide {
+  0%,40%  { transform: translateY(0); }
+  50%,90% { transform: translateY(-36px); }
+  100%    { transform: translateY(0); }
+}
+</style>
+
 <div class="ann-bar">
-  ✦&nbsp;&nbsp;{{ section.settings.text | default: 'LIVRAISON OFFERTE DÈS 70€' }}&nbsp;&nbsp;·&nbsp;&nbsp;CODE&nbsp;<strong>{{ section.settings.code | default: 'LIVRAISON70' }}</strong>&nbsp;&nbsp;✦
+  <div class="ann-bar__track">
+    <div class="ann-bar__msg">
+      ✦&nbsp;&nbsp;{{ section.settings.text | default: 'LIVRAISON OFFERTE DÈS 70€' }}&nbsp;&nbsp;·&nbsp;&nbsp;CODE&nbsp;<strong>{{ section.settings.code | default: 'LIVRAISON70' }}</strong>&nbsp;&nbsp;✦
+    </div>
+    <div class="ann-bar__msg">
+      ✦&nbsp;&nbsp;{{ section.settings.text2 | default: '-10% SUR VOTRE 1ÈRE COMMANDE' }}&nbsp;&nbsp;·&nbsp;&nbsp;CODE&nbsp;<strong>{{ section.settings.code2 | default: 'BIENVENUE10' }}</strong>&nbsp;&nbsp;✦
+    </div>
+  </div>
 </div>
 
 {% schema %}
 {
   "name": "Bandeau promo",
   "settings": [
-    { "type": "text", "id": "text", "label": "Texte", "default": "LIVRAISON OFFERTE DÈS 70€" },
-    { "type": "text", "id": "code", "label": "Code promo", "default": "LIVRAISON70" }
+    { "type": "text", "id": "text", "label": "Message 1", "default": "LIVRAISON OFFERTE DÈS 70€" },
+    { "type": "text", "id": "code", "label": "Code 1", "default": "LIVRAISON70" },
+    { "type": "text", "id": "text2", "label": "Message 2", "default": "-10% SUR VOTRE 1ÈRE COMMANDE" },
+    { "type": "text", "id": "code2", "label": "Code 2", "default": "BIENVENUE10" }
   ]
 }
 {% endschema %}
