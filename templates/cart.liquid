@@ -58,14 +58,21 @@
         <!-- Code promo -->
         <div class="promo-row">
           {%- if cart.cart_level_discount_applications.size == 0 -%}
-            <input type="text" name="discount" placeholder="Code promo" value="" class="promo-in">
-            <button type="submit" name="update" class="btn btn-ghost">OK</button>
+            <input type="text" id="promo-input" placeholder="Code promo" class="promo-in">
+            <button type="button" class="btn btn-ghost" onclick="applyPromo()">OK</button>
           {%- else -%}
             {%- for discount in cart.cart_level_discount_applications -%}
               <span style="color:#C9A84C;font-size:13px">✓ {{ discount.title }}</span>
             {%- endfor -%}
           {%- endif -%}
         </div>
+        <script>
+        function applyPromo() {
+          var code = document.getElementById('promo-input').value.trim();
+          if (code) window.location.href = '/discount/' + encodeURIComponent(code) + '?redirect=/cart';
+        }
+        document.getElementById('promo-input') && document.getElementById('promo-input').addEventListener('keydown', function(e){ if(e.key==='Enter') applyPromo(); });
+        </script>
 
         <!-- Récap -->
         <div class="cart-recap">
