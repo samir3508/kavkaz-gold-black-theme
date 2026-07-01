@@ -193,6 +193,15 @@
             "name": "Amine K.",
             "location": "Paris"
           }
+        },
+        "rv7": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "text": "Mes cheveux sont moins gras, j'ai moins de démangeaisons. J'ai l'impression que j'ai plus de volume et d'épaisseur — je vois moins mon crâne alors qu'avant mes cheveux étaient trop fins. Ça fait que 2 semaines et je suis très content. Je pense que le fait d'arrêter les shampoings industriels aide beaucoup aussi.",
+            "name": "Fabien R.",
+            "location": "France"
+          }
         }
       },
       "block_order": [
@@ -201,7 +210,8 @@
         "rv3",
         "rv4",
         "rv5",
-        "rv6"
+        "rv6",
+        "rv7"
       ],
       "settings": {
         "title": "Ils ont essayé. Ils reviennent."
