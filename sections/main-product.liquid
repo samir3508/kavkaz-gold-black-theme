@@ -88,6 +88,7 @@
               data-cents="{{ v.price }}"
               data-blurb="{{ blurb }}"
               data-img="{{ p.featured_image | image_url: width: 900 }}"
+              data-is-pack="{{ is_pack }}"
               onchange="document.getElementById('pf-blurb').textContent=this.dataset.blurb;document.getElementById('pf-compare').style.display='none';document.querySelectorAll('.vcard').forEach(c=>c.classList.remove('vcard--on'));this.closest('.vcard').classList.add('vcard--on');kgbUpd()">
             <div>
               <span class="vcard__name">{% if is_pack %}Pack 3 savonnettes{% else %}Savonnette 80g{% endif %}</span>
@@ -131,13 +132,13 @@
             <img src="{{ brosse.featured_image | image_url: width: 160 }}" alt="Brosse" class="upsell-card__img">
           {%- endif -%}
           <div class="upsell-card__body">
-            <span class="upsell-card__tag">RECOMMANDÉ</span>
+            <span class="upsell-card__tag" id="brush-tag-label">RECOMMANDÉ</span>
             <span class="upsell-card__name">Brosse Massage Cuir Chevelu</span>
             <span class="upsell-card__sub">Stimule la microcirculation · amplifie les résultats du savon</span>
           </div>
           <div class="upsell-card__right">
-            <span class="upsell-card__price g">+ {{ brosse.variants.first.price | money }}</span>
-            <span class="upsell-card__box"></span>
+            <span class="upsell-card__price g" id="brush-price-label">+ {{ brosse.variants.first.price | money }}</span>
+            <span class="upsell-card__box" id="brush-box"></span>
           </div>
         </label>
       </div>
@@ -345,9 +346,27 @@ function kgbUpd() {
   var total = cents * qty;
   var brushCb = document.getElementById('brush-cb');
   var brushCard = document.querySelector('.upsell-card[data-cents]');
-  if (brushCb && brushCb.checked && brushCard) {
-    total += parseInt(brushCard.dataset.cents, 10);
+  var isPack = radio.dataset.isPack === 'true';
+  var brushPriceEl = document.getElementById('brush-price-label');
+  var brushTagEl = document.getElementById('brush-tag-label');
+  var brushBoxEl = document.getElementById('brush-box');
+
+  if (brushCb && brushCard) {
+    if (isPack) {
+      brushCb.checked = true;
+      brushCb.disabled = true;
+      if (brushPriceEl) { brushPriceEl.textContent = 'OFFERTE'; brushPriceEl.style.color = 'var(--gold)'; brushPriceEl.style.fontSize = '11px'; brushPriceEl.style.letterSpacing = '1px'; }
+      if (brushTagEl) { brushTagEl.textContent = 'INCLUSE OFFERTE'; }
+      if (brushBoxEl) { brushBoxEl.style.background = 'var(--gold)'; brushBoxEl.style.borderColor = 'var(--gold)'; }
+    } else {
+      brushCb.disabled = false;
+      if (brushPriceEl) { brushPriceEl.textContent = '+ ' + (parseInt(brushCard.dataset.cents, 10) / 100).toFixed(2).replace('.', ',') + ' €'; brushPriceEl.style.color = ''; brushPriceEl.style.fontSize = ''; brushPriceEl.style.letterSpacing = ''; }
+      if (brushTagEl) { brushTagEl.textContent = 'RECOMMANDÉ'; brushTagEl.style.color = ''; }
+      if (brushBoxEl && !brushCb.checked) { brushBoxEl.style.background = ''; brushBoxEl.style.borderColor = ''; }
+      if (brushCb.checked) total += parseInt(brushCard.dataset.cents, 10);
+    }
   }
+
   var fmt = (total / 100).toFixed(2).replace('.', ',') + ' €';
   document.getElementById('pf-price').textContent = fmt;
   var bb = document.getElementById('bb-price');
@@ -357,6 +376,7 @@ function kgbUpd() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  kgbUpd();
   var form = document.getElementById('product-form');
   if (!form) return;
   form.addEventListener('submit', function(e) {
