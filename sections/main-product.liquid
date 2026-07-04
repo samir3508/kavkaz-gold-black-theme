@@ -346,27 +346,9 @@ function kgbUpd() {
   var total = cents * qty;
   var brushCb = document.getElementById('brush-cb');
   var brushCard = document.querySelector('.upsell-card[data-cents]');
-  var isPack = radio.dataset.isPack === 'true';
-  var brushPriceEl = document.getElementById('brush-price-label');
-  var brushTagEl = document.getElementById('brush-tag-label');
-  var brushBoxEl = document.getElementById('brush-box');
-
-  if (brushCb && brushCard) {
-    if (isPack) {
-      brushCb.checked = true;
-      brushCb.disabled = true;
-      if (brushPriceEl) { brushPriceEl.textContent = 'OFFERTE'; brushPriceEl.style.color = 'var(--gold)'; brushPriceEl.style.fontSize = '11px'; brushPriceEl.style.letterSpacing = '1px'; }
-      if (brushTagEl) { brushTagEl.textContent = 'INCLUSE OFFERTE'; }
-      if (brushBoxEl) { brushBoxEl.style.background = 'var(--gold)'; brushBoxEl.style.borderColor = 'var(--gold)'; }
-    } else {
-      brushCb.disabled = false;
-      if (brushPriceEl) { brushPriceEl.textContent = '+ ' + (parseInt(brushCard.dataset.cents, 10) / 100).toFixed(2).replace('.', ',') + ' €'; brushPriceEl.style.color = ''; brushPriceEl.style.fontSize = ''; brushPriceEl.style.letterSpacing = ''; }
-      if (brushTagEl) { brushTagEl.textContent = 'RECOMMANDÉ'; brushTagEl.style.color = ''; }
-      if (brushBoxEl && !brushCb.checked) { brushBoxEl.style.background = ''; brushBoxEl.style.borderColor = ''; }
-      if (brushCb.checked) total += parseInt(brushCard.dataset.cents, 10);
-    }
+  if (brushCb && brushCb.checked && brushCard) {
+    total += parseInt(brushCard.dataset.cents, 10);
   }
-
   var fmt = (total / 100).toFixed(2).replace('.', ',') + ' €';
   document.getElementById('pf-price').textContent = fmt;
   var bb = document.getElementById('bb-price');
