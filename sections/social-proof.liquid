@@ -9,6 +9,30 @@
 
     <p class="ew" style="margin-bottom:16px">{{ section.settings.title | default: 'Avis vérifiés' }}</p>
 
+    {%- if section.settings.tp_business_id != blank -%}
+      {%- case section.settings.tp_template -%}
+        {%- when 'micro' -%}
+          {%- assign tp_template_id = '5419b6ffb0d04a076446a9af' -%}
+          {%- assign tp_height = '24px' -%}
+        {%- when 'carousel' -%}
+          {%- assign tp_template_id = '53aa8912dec7e10d38f59f36' -%}
+          {%- assign tp_height = '140px' -%}
+        {%- else -%}
+          {%- assign tp_template_id = '56278e9abfbbba0bdcd568bc' -%}
+          {%- assign tp_height = '52px' -%}
+      {%- endcase -%}
+      <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+      <div class="trustpilot-widget" style="margin:0 0 28px"
+        data-locale="fr-FR"
+        data-template-id="{{ tp_template_id }}"
+        data-businessunit-id="{{ section.settings.tp_business_id }}"
+        data-style-height="{{ tp_height }}"
+        data-style-width="100%"
+        data-theme="dark">
+        <a href="https://fr.trustpilot.com/review/kavkaz.fr" target="_blank" rel="noopener">Trustpilot</a>
+      </div>
+    {%- endif -%}
+
     <div class="reviews">
       {%- for block in section.blocks -%}
         <div class="review" {{ block.shopify_attributes }}>
@@ -36,7 +60,20 @@
   "tag": "section",
   "settings": [
     { "type": "text", "id": "ig_handle", "label": "Handle Instagram (sans @)", "default": "kavkazgoldblack" },
-    { "type": "text", "id": "title", "label": "Titre avis", "default": "Avis vérifiés" }
+    { "type": "text", "id": "title", "label": "Titre avis", "default": "Avis vérifiés" },
+    { "type": "header", "content": "Trustpilot" },
+    { "type": "text", "id": "tp_business_id", "label": "Business Unit ID Trustpilot", "info": "Dans le code du widget Trustpilot : data-businessunit-id. Laisser vide pour masquer le widget." },
+    {
+      "type": "select",
+      "id": "tp_template",
+      "label": "Type de widget Trustpilot",
+      "options": [
+        { "value": "collector", "label": "Collecteur d'avis (recommandé au départ)" },
+        { "value": "micro", "label": "Micro combo (note + nombre d'avis)" },
+        { "value": "carousel", "label": "Carrousel d'avis" }
+      ],
+      "default": "collector"
+    }
   ],
   "blocks": [{
     "type": "review",
