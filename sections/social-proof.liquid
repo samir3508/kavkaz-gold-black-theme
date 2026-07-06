@@ -51,6 +51,14 @@
       {%- endfor -%}
     </div>
 
+    {%- if section.settings.tp_business_id != blank -%}
+      <a href="https://fr.trustpilot.com/review/kavkaz.fr" target="_blank" rel="noopener" class="ig-cta" style="margin-top:24px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M12 2l2.47 5.26 5.78.72-4.27 3.95 1.12 5.72L12 14.9l-5.1 2.75 1.12-5.72L3.75 7.98l5.78-.72z" fill="#00B67A"/></svg>
+        <span>Voir nos avis clients vérifiés sur <strong>Trustpilot</strong></span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    {%- endif -%}
+
   </div>
 </section>
 
