@@ -214,6 +214,7 @@
         "rv7"
       ],
       "settings": {
+        "ig_handle": "kavkazgoldblack",
         "title": "Ils ont essayé. Ils reviennent."
       }
     },
@@ -393,6 +394,15 @@
         "title": "5 gestes, tous les jours"
       }
     },
+    "spotlight_brosse": {
+      "type": "product-spotlight",
+      "settings": {
+        "eyebrow": "L'accessoire",
+        "title": "Brosse Massage Cuir Chevelu",
+        "subtitle": "Amplifie les résultats du Savon Kavkaz",
+        "product": "brosse-massage-cuir-chevelu-kavkaz"
+      }
+    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -453,15 +463,6 @@
         "title_em": "fréquentes"
       }
     },
-    "spotlight_brosse": {
-      "type": "product-spotlight",
-      "settings": {
-        "eyebrow": "L'accessoire",
-        "title": "Brosse Massage Cuir Chevelu",
-        "subtitle": "Amplifie les résultats du Savon Kavkaz",
-        "product": "brosse-massage-cuir-chevelu-kavkaz"
-      }
-    },
     "cta": {
       "type": "closing-cta",
       "settings": {
@@ -471,6 +472,27 @@
         "cta_label": "Voir les formats",
         "cta_url": "/collections/nos-produits"
       }
+    },
+    "178334640118e5e217": {
+      "type": "apps",
+      "blocks": {
+        "trustpilot_trustpilot_review_collector_widget_dpEKRX": {
+          "type": "shopify://apps/trustpilot/blocks/trustpilot_review_collector_widget/af628f2e-96c9-437f-bc0a-e8f7ff3fa8b4",
+          "settings": {
+            "locale": "fr-FR",
+            "width": 100,
+            "height": 52,
+            "vertical_space": 10,
+            "font_family": "Arimo",
+            "font_color": "#191919",
+            "border_color": "#00b67a"
+          }
+        }
+      },
+      "block_order": [
+        "trustpilot_trustpilot_review_collector_widget_dpEKRX"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -485,6 +507,7 @@
     "ritual",
     "spotlight_brosse",
     "faq",
-    "cta"
+    "cta",
+    "178334640118e5e217"
   ]
 }
