@@ -283,16 +283,11 @@
       <p class="fl" style="margin-bottom:16px">CE QU'ILS EN DISENT</p>
 
       <!-- Badge Trustpilot -->
-      <div class="trustpilot-widget" data-locale="fr-FR"
-        data-template-id="53aa8807dec7e10d38f59f32"
-        data-businessunit-id="6a4baf085c43daa94300f228"
-        data-style-height="52px"
-        data-style-width="100%"
-        data-theme="dark"
-        style="margin-bottom:16px">
-        <a href="https://fr.trustpilot.com/review/kavkaz.fr" target="_blank" rel="noopener">Trustpilot</a>
-      </div>
-      <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+      <a href="https://fr.trustpilot.com/review/kavkaz.fr" target="_blank" rel="noopener" class="tp-badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#00B67A" style="flex-shrink:0"><path d="M12 2l2.9 8.5H23l-7 5.1 2.7 8.4L12 19l-6.7 5 2.7-8.4L1 10.5h8.1z"/></svg>
+        <span>Voir nos <strong>5 avis</strong> sur Trustpilot</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
 
       <a href="https://www.instagram.com/kavkazgoldblack/" target="_blank" rel="noopener" class="ig-cta" style="margin-bottom:16px">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#C9A84C" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="#C9A84C" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1.1" fill="#C9A84C"/></svg>
@@ -383,6 +378,8 @@
 .pdp__cal__when{font-size:11px;font-family:var(--mono);color:var(--gold);white-space:nowrap;min-width:54px;flex-shrink:0}
 .pdp__cal__what{font-size:13.5px;color:var(--cream);line-height:1.4}
 .pdp__desc--warning{font-size:13px;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:4px}
+.tp-badge{display:flex;align-items:center;gap:10px;background:rgba(0,182,122,0.08);border:1px solid rgba(0,182,122,0.3);border-radius:8px;padding:11px 14px;margin-bottom:14px;font-size:13px;color:var(--fg);text-decoration:none}
+.tp-badge strong{color:#00B67A}
 .pdp__results{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
 .pdp__results span{font-size:12px;font-family:var(--mono);letter-spacing:.5px;color:var(--gold);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.22);border-radius:20px;padding:5px 11px;white-space:nowrap}
 .pdp-reviews{margin-top:40px;border-top:1px solid var(--border);padding-top:32px}
