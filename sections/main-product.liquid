@@ -60,7 +60,15 @@
           <li><strong>L’Ail Noir fermenté</strong> bloque la DHT, l’hormone qui tue tes cheveux</li>
           <li><strong>La Nigelle</strong> élimine les champignons responsables des pellicules</li>
         </ul>
-        <p class="pdp__desc pdp__desc--calendar"><strong>Ton calendrier de résultats :</strong><br>Semaine 2–3 : pellicules éliminées · Mois 1 : chute ralentie · Mois 2 : chute stoppée, premiers duvets · Mois 3 : repousse visible</p>
+        <div class="pdp__desc--calendar">
+          <p class="pdp__cal__title">Ton calendrier de résultats</p>
+          <div class="pdp__cal__grid">
+            <div class="pdp__cal__row"><span class="pdp__cal__when">Sem. 2–3</span><span class="pdp__cal__what">Pellicules éliminées</span></div>
+            <div class="pdp__cal__row"><span class="pdp__cal__when">Mois 1</span><span class="pdp__cal__what">Chute ralentie</span></div>
+            <div class="pdp__cal__row"><span class="pdp__cal__when">Mois 2</span><span class="pdp__cal__what">Chute stoppée, premiers duvets</span></div>
+            <div class="pdp__cal__row"><span class="pdp__cal__when">Mois 3</span><span class="pdp__cal__what">Repousse visible</span></div>
+          </div>
+        </div>
         <p class="pdp__desc">Zéro sulfate. Zéro parabène. Zéro silicone. Pour femmes et hommes — cheveux, barbe, sourcils.</p>
         <p class="pdp__desc pdp__desc--warning">⚠️ Un bulbe met 90 jours à se régénérer. C’est pourquoi cette cure dure 3 mois — pas moins.</p>
         <p class="pdp__blurb" id="pf-blurb">
@@ -343,7 +351,12 @@
 .pdp__list{list-style:none;margin:0 0 14px;display:flex;flex-direction:column;gap:8px}
 .pdp__list li{display:flex;align-items:flex-start;gap:8px;font-size:14px;line-height:1.55;color:var(--fg)}
 .pdp__list li::before{content:'•';color:var(--gold);flex-shrink:0;margin-top:1px}
-.pdp__desc--calendar{background:rgba(201,168,76,0.07);border-left:3px solid var(--gold);padding:10px 14px;border-radius:0 6px 6px 0;font-size:13.5px}
+.pdp__desc--calendar{background:rgba(201,168,76,0.07);border-left:3px solid var(--gold);padding:14px 16px;border-radius:0 6px 6px 0;margin-bottom:10px}
+.pdp__cal__title{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-family:var(--mono);margin-bottom:10px}
+.pdp__cal__grid{display:flex;flex-direction:column;gap:6px}
+.pdp__cal__row{display:flex;align-items:baseline;gap:10px}
+.pdp__cal__when{font-size:11px;font-family:var(--mono);color:var(--gold);white-space:nowrap;min-width:54px;flex-shrink:0}
+.pdp__cal__what{font-size:13.5px;color:var(--cream);line-height:1.4}
 .pdp__desc--warning{font-size:13px;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:4px}
 .pdp-reviews{margin-top:40px;border-top:1px solid var(--border);padding-top:32px}
 .pdp-reviews__grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
