@@ -53,7 +53,6 @@
     </div>
 
     {%- if is_soap -%}
-      {%- if product.handle contains 'pack' -%}
         <p class="pdp__desc">Tu perds tes cheveux, ta barbe est trouée, tes pellicules reviennent sans cesse ? Les shampoings classiques masquent le problème. Le <strong>Protocole Kavkaz</strong> le traite — à la racine, littéralement.</p>
         <p class="pdp__desc">Formulé à partir de <strong>14 actifs bruts du Caucase</strong>, saponifiés à froid pour préserver 100 % de leur puissance :</p>
         <ul class="pdp__list">
@@ -64,13 +63,13 @@
         <p class="pdp__desc pdp__desc--calendar"><strong>Ton calendrier de résultats :</strong><br>Semaine 2–3 : pellicules éliminées · Mois 1 : chute ralentie · Mois 2 : chute stoppée, premiers duvets · Mois 3 : repousse visible</p>
         <p class="pdp__desc">Zéro sulfate. Zéro parabène. Zéro silicone. Pour femmes et hommes — cheveux, barbe, sourcils.</p>
         <p class="pdp__desc pdp__desc--warning">⚠️ Un bulbe met 90 jours à se régénérer. C’est pourquoi cette cure dure 3 mois — pas moins.</p>
-        <p class="pdp__blurb" id="pf-blurb">Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse.</p>
-      {%- else -%}
-        <p class="pdp__desc">Tu perds tes cheveux, ta barbe est trouée, tu as des pellicules persistantes ou ton cuir chevelu démange ? Les shampoings classiques masquent le problème sans jamais le traiter.</p>
-        <p class="pdp__desc">Le <strong>Protocole Kavkaz</strong> agit à la racine — littéralement. Formulé à partir de <strong>14 actifs végétaux du Caucase</strong>, il réactive les bulbes endormis, stoppe la chute et relance la repousse. Zéro sulfate, zéro parabène, zéro silicone.</p>
-        <p class="pdp__desc">Pour <strong>femmes et hommes</strong> — pellicules, chute de cheveux, alopécie, barbe trouée, cuir chevelu irrité.</p>
-        <p class="pdp__blurb" id="pf-blurb">Pour pellicules & démangeaisons — résultats dès 2 semaines.</p>
-      {%- endif -%}
+        <p class="pdp__blurb" id="pf-blurb">
+          {%- if product.handle contains 'pack' -%}
+            Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse.
+          {%- else -%}
+            Pour pellicules & démangeaisons — résultats dès 2 semaines.
+          {%- endif -%}
+        </p>
     {%- else -%}
       {{ product.description }}
     {%- endif -%}
