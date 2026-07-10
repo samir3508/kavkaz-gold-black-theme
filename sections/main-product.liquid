@@ -54,21 +54,21 @@
     {%- if is_soap -%}
       <div class="first-order-badge">🎁 -10% sur votre 1ère commande — code <strong>KAVKAZ10</strong></div>
       {%- if is_pack_page -%}
-        <p class="pdp__eyebrow ew">Cure capillaire 3 mois</p>
-        <h1 class="pdp__title">Protocole Kavkaz Gold Black — Cure Capillaire Complète 3 Mois</h1>
-        <div class="gift-widget">
-          <p class="gift-widget__label">🎁 Votre cure comprend</p>
-          {{ gift_widget_row }}
-        </div>
+        <p class="pdp__eyebrow ew" id="pdp-eyebrow">Cure capillaire 3 mois</p>
+        <h1 class="pdp__title" id="pdp-title">Protocole Kavkaz Gold Black — Cure Capillaire Complète 3 Mois</h1>
       {%- else -%}
-        <p class="pdp__eyebrow ew">Savon noir capillaire</p>
-        <h1 class="pdp__title">Kavkaz Gold Black</h1>
-        <a class="gift-widget gift-widget--link" href="{{ pack_product.url }}">
-          <p class="gift-widget__label">🎁 Avec la cure 3 mois : brosse offerte</p>
-          {{ gift_widget_row }}
-          <span class="gift-widget__cta">Découvrir la cure 3 mois →</span>
-        </a>
+        <p class="pdp__eyebrow ew" id="pdp-eyebrow">Savon noir capillaire</p>
+        <h1 class="pdp__title" id="pdp-title">Kavkaz Gold Black</h1>
       {%- endif -%}
+      <div class="gift-widget" id="gw-pack" {% unless is_pack_page %}style="display:none"{% endunless %}>
+        <p class="gift-widget__label">🎁 Votre cure comprend</p>
+        {{ gift_widget_row }}
+      </div>
+      <a class="gift-widget gift-widget--link" id="gw-solo" href="{{ pack_product.url }}" {% if is_pack_page %}style="display:none"{% endif %}>
+        <p class="gift-widget__label">🎁 Avec la cure 3 mois : brosse offerte</p>
+        {{ gift_widget_row }}
+        <span class="gift-widget__cta">Découvrir la cure 3 mois →</span>
+      </a>
     {%- else -%}
       <p class="pdp__eyebrow ew">Accessoire</p>
       <h1 class="pdp__title">{{ product.title }}</h1>
@@ -159,7 +159,7 @@
               data-blurb="{{ blurb }}"
               data-img="{{ p.featured_image | image_url: width: 900 }}"
               data-is-pack="{{ is_pack }}"
-              onchange="document.getElementById('pf-blurb').textContent=this.dataset.blurb;document.getElementById('pf-compare').style.display='none';document.querySelectorAll('.vcard').forEach(c=>c.classList.remove('vcard--on'));this.closest('.vcard').classList.add('vcard--on');kgbUpd()">
+              onchange="kgbSel(this)">
             <div>
               <span class="vcard__name">{% if is_pack %}Pack 3 savonnettes{% else %}Savonnette 80g{% endif %}</span>
               <span class="vcard__dur">{% if is_pack %}Chute · Repousse · Pellicules · Alopécie{% else %}Pellicules & démangeaisons uniquement{% endif %}</span>
@@ -193,7 +193,7 @@
       <!-- Upsell Brosse -->
       {%- assign brosse = all_products['brosse-massage-cuir-chevelu-kavkaz'] -%}
       {%- if brosse != blank and brosse.available and product_in_collection -%}
-      <div class="upsell-wrap">
+      <div class="upsell-wrap" {% if is_pack_page %}style="display:none"{% endif %}>
         <p class="fl" style="margin-bottom:10px">COMPLÉTEZ VOTRE ROUTINE</p>
         <label class="upsell-card" for="brush-cb"
           data-vid="{{ brosse.variants.first.id }}"
@@ -457,6 +457,27 @@
 </style>
 
 <script>
+function kgbSel(radio) {
+  document.getElementById('pf-blurb').textContent = radio.dataset.blurb;
+  document.getElementById('pf-compare').style.display = 'none';
+  document.querySelectorAll('.vcard').forEach(function(c){ c.classList.remove('vcard--on'); });
+  radio.closest('.vcard').classList.add('vcard--on');
+  var isPack = radio.dataset.isPack === 'true';
+  var eyebrow = document.getElementById('pdp-eyebrow');
+  var title = document.getElementById('pdp-title');
+  if (eyebrow) eyebrow.textContent = isPack ? 'Cure capillaire 3 mois' : 'Savon noir capillaire';
+  if (title) title.textContent = isPack ? 'Protocole Kavkaz Gold Black — Cure Capillaire Complète 3 Mois' : 'Kavkaz Gold Black';
+  var gwPack = document.getElementById('gw-pack');
+  var gwSolo = document.getElementById('gw-solo');
+  if (gwPack) gwPack.style.display = isPack ? '' : 'none';
+  if (gwSolo) gwSolo.style.display = isPack ? 'none' : '';
+  var upsell = document.querySelector('.upsell-wrap');
+  var brushCb = document.getElementById('brush-cb');
+  if (upsell) upsell.style.display = isPack ? 'none' : '';
+  if (isPack && brushCb) brushCb.checked = false;
+  kgbUpd();
+}
+
 function kgbUpd() {
   var radio = document.querySelector('input[name="id"]:checked');
   if (!radio) return;
