@@ -29,33 +29,56 @@
       {%- if p.handle == product.handle -%}{%- assign is_soap = true -%}{%- endif -%}
     {%- endfor -%}
 
+    {%- assign brush = all_products['brosse-massage-cuir-chevelu-kavkaz'] -%}
+    {%- assign pack_product = product -%}
+    {%- for p in collections['nos-produits'].products -%}
+      {%- if p.handle contains 'pack' -%}{%- assign pack_product = p -%}{%- endif -%}
+    {%- endfor -%}
+    {%- assign is_pack_page = false -%}
+    {%- if product.handle contains 'pack' -%}{%- assign is_pack_page = true -%}{%- endif -%}
+
+    {%- capture gift_widget_row -%}
+      <div class="gift-widget__row">
+        <div class="gift-widget__item">
+          <img src="{{ pack_product.featured_image | image_url: width: 160 }}" alt="Pack 3 savons thérapeutiques" loading="lazy" width="56" height="56">
+          <span class="gift-widget__name">3 savons thérapeutiques<br><em>Cure complète 3 mois</em></span>
+        </div>
+        <span class="gift-widget__plus">+</span>
+        <div class="gift-widget__item">
+          <img src="{{ brush.featured_image | image_url: width: 160 }}" alt="Brosse de massage cuir chevelu" loading="lazy" width="56" height="56">
+          <span class="gift-widget__name">Brosse de massage<br><em><s>4,90 €</s> <b>OFFERTE</b></em></span>
+        </div>
+      </div>
+    {%- endcapture -%}
+
     {%- if is_soap -%}
       <div class="first-order-badge">🎁 -10% sur votre 1ère commande — code <strong>KAVKAZ10</strong></div>
-      {%- if product.handle contains 'pack' -%}
+      {%- if is_pack_page -%}
         <p class="pdp__eyebrow ew">Cure capillaire 3 mois</p>
         <h1 class="pdp__title">Protocole Kavkaz Gold Black — Cure Capillaire Complète 3 Mois</h1>
-        {%- assign brush = all_products['brosse-massage-cuir-chevelu-kavkaz'] -%}
         <div class="gift-widget">
           <p class="gift-widget__label">🎁 Votre cure comprend</p>
-          <div class="gift-widget__row">
-            <div class="gift-widget__item">
-              <img src="{{ product.featured_image | image_url: width: 160 }}" alt="Pack 3 savons thérapeutiques" loading="lazy" width="56" height="56">
-              <span class="gift-widget__name">3 savons thérapeutiques<br><em>Cure complète 3 mois</em></span>
-            </div>
-            <span class="gift-widget__plus">+</span>
-            <div class="gift-widget__item">
-              <img src="{{ brush.featured_image | image_url: width: 160 }}" alt="Brosse de massage cuir chevelu" loading="lazy" width="56" height="56">
-              <span class="gift-widget__name">Brosse de massage<br><em><s>4,90 €</s> <b>OFFERTE</b></em></span>
-            </div>
-          </div>
+          {{ gift_widget_row }}
         </div>
       {%- else -%}
         <p class="pdp__eyebrow ew">Savon noir capillaire</p>
         <h1 class="pdp__title">Kavkaz Gold Black</h1>
+        <a class="gift-widget gift-widget--link" href="{{ pack_product.url }}">
+          <p class="gift-widget__label">🎁 Avec la cure 3 mois : brosse offerte</p>
+          {{ gift_widget_row }}
+          <span class="gift-widget__cta">Découvrir la cure 3 mois →</span>
+        </a>
       {%- endif -%}
     {%- else -%}
       <p class="pdp__eyebrow ew">Accessoire</p>
       <h1 class="pdp__title">{{ product.title }}</h1>
+      {%- if product.handle contains 'brosse' -%}
+        <a class="gift-widget gift-widget--link" href="{{ pack_product.url }}">
+          <p class="gift-widget__label">🎁 Cette brosse est OFFERTE avec la cure 3 mois</p>
+          {{ gift_widget_row }}
+          <span class="gift-widget__cta">Découvrir la cure 3 mois →</span>
+        </a>
+      {%- endif -%}
     {%- endif -%}
 
     <div class="pdp__price">
@@ -405,6 +428,9 @@
 .gift-widget__name b{color:var(--gold)}
 .gift-widget__name s{opacity:.6}
 .gift-widget__plus{font-size:20px;color:var(--gold);font-weight:700;flex-shrink:0}
+.gift-widget--link{display:block;text-decoration:none;transition:background .2s}
+.gift-widget--link:hover{background:rgba(201,168,76,0.16)}
+.gift-widget__cta{display:block;margin-top:10px;font-size:12.5px;color:var(--gold);font-weight:700}
 @media (max-width:480px){.gift-widget__row{flex-direction:column;align-items:flex-start}.gift-widget__plus{margin-left:23px}}
 .vcard__gift{display:block;font-size:12px;color:var(--gold);margin-top:3px;font-weight:600}
 .pdp__list{list-style:none;margin:0 0 14px;display:flex;flex-direction:column;gap:8px}
