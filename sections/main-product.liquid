@@ -34,7 +34,21 @@
       {%- if product.handle contains 'pack' -%}
         <p class="pdp__eyebrow ew">Cure capillaire 3 mois</p>
         <h1 class="pdp__title">Protocole Kavkaz Gold Black — Cure Capillaire Complète 3 Mois</h1>
-        <div class="gift-badge">🎁 <strong>Brosse de massage cuir chevelu OFFERTE</strong> avec votre cure — valeur 4,90 €</div>
+        {%- assign brush = all_products['brosse-massage-cuir-chevelu-kavkaz'] -%}
+        <div class="gift-widget">
+          <p class="gift-widget__label">🎁 Votre cure comprend</p>
+          <div class="gift-widget__row">
+            <div class="gift-widget__item">
+              <img src="{{ product.featured_image | image_url: width: 160 }}" alt="Pack 3 savons thérapeutiques" loading="lazy" width="56" height="56">
+              <span class="gift-widget__name">3 savons thérapeutiques<br><em>Cure complète 3 mois</em></span>
+            </div>
+            <span class="gift-widget__plus">+</span>
+            <div class="gift-widget__item">
+              <img src="{{ brush.featured_image | image_url: width: 160 }}" alt="Brosse de massage cuir chevelu" loading="lazy" width="56" height="56">
+              <span class="gift-widget__name">Brosse de massage<br><em><s>4,90 €</s> <b>OFFERTE</b></em></span>
+            </div>
+          </div>
+        </div>
       {%- else -%}
         <p class="pdp__eyebrow ew">Savon noir capillaire</p>
         <h1 class="pdp__title">Kavkaz Gold Black</h1>
@@ -381,8 +395,17 @@
 .guarantee-bar{display:flex;align-items:center;gap:10px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:var(--fg)}
 .first-order-badge{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:8px 12px;font-size:12.5px;color:var(--fg);margin-bottom:14px}
 .first-order-badge strong{color:var(--gold);letter-spacing:.5px}
-.gift-badge{background:rgba(201,168,76,0.12);border:1px solid var(--gold);border-radius:6px;padding:10px 14px;font-size:13.5px;color:var(--fg);margin:12px 0 4px}
-.gift-badge strong{color:var(--gold)}
+.gift-widget{background:rgba(201,168,76,0.08);border:1px solid var(--gold);border-radius:10px;padding:14px;margin:14px 0 4px}
+.gift-widget__label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin:0 0 10px;font-weight:700}
+.gift-widget__row{display:flex;align-items:center;gap:10px}
+.gift-widget__item{display:flex;align-items:center;gap:10px;flex:1;min-width:0}
+.gift-widget__item img{width:56px;height:56px;object-fit:cover;border-radius:8px;background:#fff;flex-shrink:0}
+.gift-widget__name{font-size:12.5px;line-height:1.45;color:var(--fg)}
+.gift-widget__name em{font-style:normal;color:#999;font-size:11.5px}
+.gift-widget__name b{color:var(--gold)}
+.gift-widget__name s{opacity:.6}
+.gift-widget__plus{font-size:20px;color:var(--gold);font-weight:700;flex-shrink:0}
+@media (max-width:480px){.gift-widget__row{flex-direction:column;align-items:flex-start}.gift-widget__plus{margin-left:23px}}
 .vcard__gift{display:block;font-size:12px;color:var(--gold);margin-top:3px;font-weight:600}
 .pdp__list{list-style:none;margin:0 0 14px;display:flex;flex-direction:column;gap:8px}
 .pdp__list li{font-size:14px;line-height:1.6;color:var(--fg);padding-left:18px;position:relative}
