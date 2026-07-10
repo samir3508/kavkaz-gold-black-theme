@@ -34,6 +34,7 @@
       {%- if product.handle contains 'pack' -%}
         <p class="pdp__eyebrow ew">Cure capillaire 3 mois</p>
         <h1 class="pdp__title">Protocole Kavkaz Gold Black — Cure Capillaire Complète 3 Mois</h1>
+        <div class="gift-badge">🎁 <strong>Brosse de massage cuir chevelu OFFERTE</strong> avec votre cure — valeur 4,90 €</div>
       {%- else -%}
         <p class="pdp__eyebrow ew">Savon noir capillaire</p>
         <h1 class="pdp__title">Kavkaz Gold Black</h1>
@@ -85,7 +86,7 @@
         <p class="pdp__desc pdp__desc--warning">⚠️ Un bulbe met 90 jours à se régénérer. C’est pourquoi cette cure dure 3 mois — pas moins.</p>
         <p class="pdp__blurb" id="pf-blurb">
           {%- if product.handle contains 'pack' -%}
-            Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse.
+            Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse. 🎁 Brosse de massage offerte.
           {%- else -%}
             Pour pellicules & démangeaisons — résultats dès 2 semaines.
           {%- endif -%}
@@ -112,7 +113,7 @@
           {%- assign is_pack = false -%}
           {%- if p.handle contains 'pack' -%}{%- assign is_pack = true -%}{%- endif -%}
           {%- assign blurb = 'Pour pellicules & démangeaisons — résultats dès 2 semaines.' -%}
-          {%- if is_pack -%}{%- assign blurb = 'Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse.' -%}{%- endif -%}
+          {%- if is_pack -%}{%- assign blurb = 'Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse. 🎁 Brosse de massage offerte.' -%}{%- endif -%}
           <label class="vcard {% if is_current %}vcard--on{% endif %}">
             <input type="radio" name="id" value="{{ v.id }}"
               {% if is_current %}checked{% endif %}
@@ -125,6 +126,7 @@
             <div>
               <span class="vcard__name">{% if is_pack %}Pack 3 savonnettes{% else %}Savonnette 80g{% endif %}</span>
               <span class="vcard__dur">{% if is_pack %}Chute · Repousse · Pellicules · Alopécie{% else %}Pellicules & démangeaisons uniquement{% endif %}</span>
+              {% if is_pack %}<span class="vcard__gift">🎁 + Brosse de massage offerte</span>{% endif %}
             </div>
             <div class="vcard__right">
               <span class="vcard__price">{{ v.price | money }}</span>
@@ -379,6 +381,9 @@
 .guarantee-bar{display:flex;align-items:center;gap:10px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:var(--fg)}
 .first-order-badge{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:8px 12px;font-size:12.5px;color:var(--fg);margin-bottom:14px}
 .first-order-badge strong{color:var(--gold);letter-spacing:.5px}
+.gift-badge{background:rgba(201,168,76,0.12);border:1px solid var(--gold);border-radius:6px;padding:10px 14px;font-size:13.5px;color:var(--fg);margin:12px 0 4px}
+.gift-badge strong{color:var(--gold)}
+.vcard__gift{display:block;font-size:12px;color:var(--gold);margin-top:3px;font-weight:600}
 .pdp__list{list-style:none;margin:0 0 14px;display:flex;flex-direction:column;gap:8px}
 .pdp__list li{font-size:14px;line-height:1.6;color:var(--fg);padding-left:18px;position:relative}
 .pdp__list li::before{content:'•';color:var(--gold);position:absolute;left:0;top:0}
