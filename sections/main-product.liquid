@@ -248,7 +248,10 @@
       <!-- Garantie -->
       <div class="guarantee-bar">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z" stroke="#C9A84C" stroke-width="1.4" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 5-5" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Satisfait ou remboursé <strong>30 jours</strong> — sans justification</span>
+        <div>
+          <span>Satisfait ou remboursé <strong>30 jours</strong> — sans justification</span>
+          <p class="guarantee-bar__note">Notre garantie porte sur la <strong>qualité du savon</strong>, pas sur une promesse de repousse. Dès les premiers lavages, vous sentirez la différence d'un soin sans sulfates ni silicones : cuir chevelu apaisé, cheveux plus sains, fini les agressions chimiques. La repousse, elle, varie selon chaque personne et demande la cure complète de 3 mois — aucun produit ne peut la garantir.</p>
+        </div>
       </div>
 
       <!-- Bouton panier -->
@@ -415,7 +418,10 @@
 .upsell-card__box{width:20px;height:20px;border:1.5px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .upsell-card:has(#brush-cb:checked) .upsell-card__box{background:var(--gold);border-color:var(--gold)}
 .upsell-card:has(#brush-cb:checked) .upsell-card__box::after{content:'';width:10px;height:6px;border-left:2px solid #000;border-bottom:2px solid #000;transform:rotate(-45deg) translateY(-2px);display:block}
-.guarantee-bar{display:flex;align-items:center;gap:10px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:var(--fg)}
+.guarantee-bar{display:flex;align-items:flex-start;gap:10px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.25);border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:var(--fg)}
+.guarantee-bar svg{flex-shrink:0;margin-top:1px}
+.guarantee-bar__note{font-size:11.5px;line-height:1.55;color:var(--muted);margin:6px 0 0}
+.guarantee-bar__note strong{color:var(--gold);font-weight:600}
 .first-order-badge{background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:8px 12px;font-size:12.5px;color:var(--fg);margin-bottom:14px}
 .first-order-badge strong{color:var(--gold);letter-spacing:.5px}
 .gift-widget{background:rgba(201,168,76,0.08);border:1px solid var(--gold);border-radius:10px;padding:14px;margin:14px 0 4px}
