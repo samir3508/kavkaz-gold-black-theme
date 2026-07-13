@@ -5,8 +5,8 @@
   <p class="ew ew--c hero__eyebrow">{{ section.settings.eyebrow | default: 'Recette ancestrale du Caucase' }}</p>
 
   <h1 class="hero__title">
-    {{ section.settings.title_line1 | default: 'Stoppe la chute,' }}<br>
-    relance la <em class="g">{{ section.settings.title_line2 | default: 'repousse' }}</em>.
+    {{ section.settings.title_line1 | default: 'Pas de baguette magique,' }}<br>
+    <em class="g">{{ section.settings.title_line2 | default: 'juste la nature.' }}</em>
   </h1>
 
   <p class="hero__lead">{{ section.settings.subtitle | default: 'Le savon noir capillaire thérapeutique — 14 ingrédients naturels, des résultats visibles dès la 2ᵉ semaine.' }}</p>
@@ -44,9 +44,9 @@
   "name": "Héro",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Badge", "default": "Recette ancestrale du Caucase" },
-    { "type": "text", "id": "title_line1", "label": "Titre ligne 1", "default": "Stoppe la chute," },
-    { "type": "text", "id": "title_line2", "label": "Titre or italique", "default": "repousse" },
-    { "type": "textarea", "id": "subtitle", "label": "Sous-titre", "default": "Le savon noir capillaire thérapeutique — 14 ingrédients naturels, des résultats visibles dès la 2ᵉ semaine." },
+    { "type": "text", "id": "title_line1", "label": "Titre ligne 1", "default": "Pas de baguette magique," },
+    { "type": "text", "id": "title_line2", "label": "Titre or italique (ligne 2)", "default": "juste la nature." },
+    { "type": "textarea", "id": "subtitle", "label": "Sous-titre", "default": "Une recette ancestrale du Caucase — 14 actifs naturels qui nettoient, désinfectent et purifient le cuir chevelu. Et sur un cuir chevelu sain, tout suit : chute freinée, repousse, zéro pellicule, brillance, douceur. Dès la 2ᵉ semaine." },
     { "type": "image_picker", "id": "image", "label": "Photo produit" },
     { "type": "text", "id": "cta_label", "label": "Bouton", "default": "Découvrir le soin" },
     { "type": "url", "id": "cta_url", "label": "Lien bouton" }
