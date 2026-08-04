@@ -515,6 +515,25 @@ details > summary::-webkit-details-marker { display: none; }
 .review__name { color: var(--gold); font-weight: 600; }
 .review__loc { color: rgba(249,245,240,0.35); }
 
+/* ── Judge.me reviews (widget forces a white card bg by default) ── */
+.jdgm-rev {
+  background-color: var(--ink-2) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--r);
+}
+.jdgm-rev__author,
+.jdgm-rev__title,
+.jdgm-rev__body,
+.jdgm-rev-widg__title,
+.jdgm-rev-widg__summary-text {
+  color: var(--cream) !important;
+}
+.jdgm-rev__timestamp,
+.jdgm-rev__location {
+  color: var(--muted) !important;
+}
+.jdgm-rev__icon { color: var(--gold) !important; }
+
 /* ── Closing CTA ───────────────────────────── */
 .closing { background: var(--black); }
 .closing__title { font-family: var(--serif); font-size: clamp(26px, 8vw, 36px); font-weight: 600; line-height: 1.1; text-align: center; margin-bottom: 12px; }
