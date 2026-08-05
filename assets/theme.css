@@ -540,6 +540,30 @@ details > summary::-webkit-details-marker { display: none; }
 }
 .jdgm-rev__icon { color: var(--gold) !important; }
 
+/* ── Judge.me widget header (title, rating summary, filters, sort) ── */
+.jm-review-widget-minimal-header__title,
+.jm-average-rating-display .jm-text,
+.jm-custom-answer-filter__text,
+.jm-sort-filter__select,
+.jm-sort-filter__select option {
+  color: var(--cream) !important;
+}
+.jm-button--secondary {
+  color: var(--cream) !important;
+  border-color: var(--border) !important;
+  background-color: transparent !important;
+}
+.jm-custom-answer-filter__icon svg,
+.jm-custom-answer-filter__icon path,
+.jm-sort-filter__icon svg,
+.jm-sort-filter__icon path {
+  fill: var(--cream) !important;
+}
+.jm-sort-filter__select {
+  border-color: var(--border) !important;
+  background-color: transparent !important;
+}
+
 /* ── Closing CTA ───────────────────────────── */
 .closing { background: var(--black); }
 .closing__title { font-family: var(--serif); font-size: clamp(26px, 8vw, 36px); font-weight: 600; line-height: 1.1; text-align: center; margin-bottom: 12px; }
