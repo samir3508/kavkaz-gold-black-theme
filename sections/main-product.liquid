@@ -124,7 +124,7 @@
         <p class="pdp__desc pdp__desc--warning">⚠️ Un bulbe met 90 jours à se régénérer. C’est pourquoi cette cure dure 3 mois — pas moins.</p>
         <p class="pdp__blurb" id="pf-blurb">
           {%- if product.handle contains 'pack' -%}
-            Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse. 🎁 Brosse de massage offerte.
+            Pour tous les problèmes — pellicules, chute, barbe trouée, repousse. 🎁 Brosse de massage offerte.
           {%- else -%}
             Pour pellicules & démangeaisons — résultats dès 2 semaines.
           {%- endif -%}
@@ -151,7 +151,7 @@
           {%- assign is_pack = false -%}
           {%- if p.handle contains 'pack' -%}{%- assign is_pack = true -%}{%- endif -%}
           {%- assign blurb = 'Pour pellicules & démangeaisons — résultats dès 2 semaines.' -%}
-          {%- if is_pack -%}{%- assign blurb = 'Pour tous les problèmes — pellicules, chute, alopécie, barbe trouée, repousse. 🎁 Brosse de massage offerte.' -%}{%- endif -%}
+          {%- if is_pack -%}{%- assign blurb = 'Pour tous les problèmes — pellicules, chute, barbe trouée, repousse. 🎁 Brosse de massage offerte.' -%}{%- endif -%}
           <label class="vcard {% if is_current %}vcard--on{% endif %}">
             <input type="radio" name="id" value="{{ v.id }}"
               {% if is_current %}checked{% endif %}
@@ -163,7 +163,7 @@
               onchange="kgbSel(this)">
             <div>
               <span class="vcard__name">{% if is_pack %}Pack 3 savonnettes{% else %}Savonnette 80g{% endif %}</span>
-              <span class="vcard__dur">{% if is_pack %}Chute · Repousse · Pellicules · Alopécie{% else %}Pellicules & démangeaisons uniquement{% endif %}</span>
+              <span class="vcard__dur">{% if is_pack %}Chute · Repousse · Pellicules · Barbe trouée{% else %}Pellicules & démangeaisons uniquement{% endif %}</span>
               {% if is_pack %}<span class="vcard__gift">🎁 + Brosse de massage offerte</span>{% endif %}
             </div>
             <div class="vcard__right">
@@ -184,7 +184,7 @@
         </div>
         <div class="fmt-guide__block fmt-guide__block--hard">
           <p class="fmt-guide__q">✗ Savonnette 1 mois — insuffisant pour la repousse</p>
-          <p class="fmt-guide__a">Pour la <strong>chute de cheveux, l'alopécie, la barbe trouée ou la repousse</strong> : 1 mois ne changera <strong>absolument rien</strong>.<br><br>C'est le même savon — mais un bulbe pileux met <strong>3 mois minimum</strong> à se réactiver biologiquement. Sans cette durée, les actifs n'ont pas le temps d'agir en profondeur.<br><br>→ <strong>Cure 3 Mois obligatoire</strong> pour ces problèmes.</p>
+          <p class="fmt-guide__a">Pour la <strong>chute de cheveux, la barbe trouée ou la repousse</strong> : 1 mois ne changera <strong>absolument rien</strong>.<br><br>C'est le même savon — mais un bulbe pileux met <strong>3 mois minimum</strong> à se réactiver biologiquement. Sans cette durée, les actifs n'ont pas le temps d'agir en profondeur.<br><br>→ <strong>Cure 3 Mois obligatoire</strong> pour ces problèmes.</p>
         </div>
       </div>
       {%- else -%}

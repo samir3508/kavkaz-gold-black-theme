@@ -412,14 +412,14 @@
           "type": "item",
           "settings": {
             "question": "Pour qui est ce savon ?",
-            "answer": "Pour les femmes et les hommes souffrant de chute de cheveux, alopécie, barbe à trous, pellicules ou cuir chevelu irrité."
+            "answer": "Pour les femmes et les hommes souffrant de chute de cheveux, barbe à trous, pellicules ou cuir chevelu irrité."
           }
         },
         "fq2": {
           "type": "item",
           "settings": {
             "question": "Quelle est la différence entre la savonnette 1 mois et le pack 3 mois ?",
-            "answer": "C'est exactement le même savon — seule la durée de traitement change.\n\nSavonnette 1 mois (14,90€) : efficace pour les pellicules et démangeaisons. Résultats dès 2 semaines.\n\nPack 3 mois (39,90€) : obligatoire pour la chute, l'alopécie, la barbe trouée et la repousse. Un bulbe pileux met 3 mois minimum à se réactiver. Avec 1 mois, aucun résultat sur ces problèmes."
+            "answer": "C'est exactement le même savon — seule la durée de traitement change.\n\nSavonnette 1 mois (14,90€) : efficace pour les pellicules et démangeaisons. Résultats dès 2 semaines.\n\nPack 3 mois (39,90€) : obligatoire pour la chute, la barbe trouée et la repousse. Un bulbe pileux met 3 mois minimum à se réactiver. Avec 1 mois, aucun résultat sur ces problèmes."
           }
         },
         "fq3": {
