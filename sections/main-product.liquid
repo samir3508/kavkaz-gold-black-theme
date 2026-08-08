@@ -336,6 +336,7 @@
         <span>Voir les témoignages sur <strong>@kavkazgoldblack</strong></span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+      {%- unless is_pack_page -%}
       <div class="pdp-reviews__grid">
         <div class="pdp-rv">
           <div class="pdp-rv__stars">★★★★★</div>
@@ -363,6 +364,7 @@
           <span class="pdp-rv__author">Fabien R. · France</span>
         </div>
       </div>
+      {%- endunless -%}
     </div>
     {%- endif -%}
 
