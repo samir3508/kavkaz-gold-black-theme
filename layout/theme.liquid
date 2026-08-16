@@ -39,6 +39,10 @@
 
   {% section 'footer' %}
 
+  {% unless customer %}
+    {% render 'newsletter-popup' %}
+  {% endunless %}
+
   {{ 'theme.js' | asset_url | script_tag }}
 
   <script src="https://kavkaz-chatbot.vercel.app/kavkaz-chat-widget.js?v=6" data-api-url="https://kavkaz-chatbot.vercel.app/api/chat" defer></script>
