@@ -1,0 +1,15 @@
+<div class="pg-page container">
+  <a href="{{ blog.url }}" class="article-back">← {{ blog.title }}</a>
+  <span class="fl">
+    {{ article.published_at | date: "%d %B %Y" }}{% if article.author %} · {{ article.author }}{% endif %}
+  </span>
+  <h1>{{ article.title }}</h1>
+  {%- if article.image -%}
+    <img src="{{ article.image | image_url: width: 1200 }}" alt="{{ article.image.alt | escape }}" class="article-hero" width="1200" height="675" loading="lazy">
+  {%- endif -%}
+  <div class="rte article-body">{{ article.content }}</div>
+</div>
+
+{% schema %}
+{ "name": "Page Article", "tag": "section", "settings": [], "presets": [{ "name": "Page Article" }] }
+{% endschema %}

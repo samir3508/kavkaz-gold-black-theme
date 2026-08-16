@@ -1,0 +1,25 @@
+<div class="pg-page container">
+  <h1>{{ blog.title }}</h1>
+  <div class="blog-grid">
+    {%- for article in blog.articles -%}
+      <a href="{{ article.url }}" class="bcard">
+        {%- if article.image -%}
+          <img src="{{ article.image | image_url: width: 800 }}" alt="{{ article.image.alt | escape }}" class="bcard__img" width="800" height="450" loading="lazy">
+        {%- else -%}
+          <div class="placeholder bcard__img"><span>{{ article.title }}</span></div>
+        {%- endif -%}
+        <div class="bcard__info">
+          <span class="bcard__date">{{ article.published_at | date: "%d %B %Y" }}</span>
+          <div class="bcard__title">{{ article.title }}</div>
+          <p class="bcard__excerpt">{{ article.excerpt_or_content | strip_html | truncatewords: 26 }}</p>
+        </div>
+      </a>
+    {%- else -%}
+      <p style="color:var(--muted)">Aucun article pour le moment.</p>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{ "name": "Page Blog", "tag": "section", "settings": [], "presets": [{ "name": "Page Blog" }] }
+{% endschema %}
