@@ -799,6 +799,15 @@ details[open] > summary::after { content: '−'; }
 .fmt-guide__block--hard .fmt-guide__a strong { color: #e8a0a0; }
 .fmt-guide__note { font-size: 11.5px; color: var(--muted); margin-top: 6px; font-style: italic; }
 
+/* ── Judge.me — texte illisible sur fond sombre ─ */
+/* Le widget expose ses couleurs via des custom properties ;
+   celles par défaut (noir) sont invisibles sur le fond noir du thème. */
+#judgeme_product_reviews,
+#judgeme_product_reviews * {
+  --jm-review-widget-text-color: var(--cream) !important;
+  --jm-review-widget-lighter-text-color: var(--cream-2) !important;
+}
+
 /* ── Newsletter popup ───────────────────────── */
 .nl-popup { position: fixed; inset: 0; z-index: 300; display: flex; align-items: center; justify-content: center; padding: 20px; }
 .nl-popup[hidden] { display: none; }
